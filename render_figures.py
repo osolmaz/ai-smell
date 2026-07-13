@@ -7,10 +7,11 @@ Figure 2: scatter of exactly-three-list rate vs labeled-bullet share, the
 two metrics that each classify the whole corpus alone, with the detector
 thresholds drawn as dashed reference lines.
 
-Figure 3: scatter of the in-the-wild tweet samples (from results.json)
-on the same axes and limits as figure 2, with the ground-truth pages and
-baselines drawn faintly for reference, so the wild samples are judged
-under identical conditions and the plots superimpose.
+Figure 3: four scatter panels of the in-the-wild tweet samples (from
+results.json) over different metric pairs, with the ground-truth pages
+and baselines drawn faintly for reference in every panel and the
+detector thresholds marked where they exist. The first panel repeats
+figure 2's axes and limits exactly.
 
 Solid light background baked in so the figures read on the blog's light
 and dark themes alike.
@@ -167,56 +168,75 @@ def fig2():
 def fig3():
     docs = json.loads((Path(__file__).resolve().parent / "results.json").read_text())["docs"]
     tw = [r for r in docs if r["group"] == "tweets"]
+    TW_COLOR = "#475569"
 
-    fig, ax = plt.subplots(figsize=(8.0, 5.6))
-    fig.patch.set_facecolor(BG)
-    style_axis(ax)
+    # (title, json x key, json y key, ROWS x idx, ROWS y idx,
+    #  x label, y label, x threshold, y threshold)
+    panels = [
+        ("The detector's two metrics, with its thresholds",
+         "triads_per_1k", "labeled_bullet_pct_of_bullets", 3, 4,
+         "Exactly-three lists / 1k words", "Labeled bullets, % of bullets", 3, 30),
+        ("Em dashes against exactly-three lists",
+         "em_dash_per_1k", "triads_per_1k", 2, 3,
+         "Em dashes / 1k words", "Exactly-three lists / 1k words", None, 3),
+        ("Em dashes against fragment sentences",
+         "em_dash_per_1k", "frag_pct", 2, 6,
+         "Em dashes / 1k words", "Fragment sentences, % of sentences", None, None),
+        ("First person against lexical diversity",
+         "first_person_per_1k", "ttr_280", 5, 7,
+         "First person / 1k words", "Type-token ratio (first 280 words)", None, None),
+    ]
 
-    ax.axvline(3, color=MUTED, linestyle="--", linewidth=1)
-    ax.axhline(30, color=MUTED, linestyle="--", linewidth=1)
-    ax.text(3.15, 55, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, rotation=90)
-    ax.text(16.9, 31.8, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
-
-    # ground-truth corpus, faint, for reference against figure 2
-    for label, group, _, x, y, *_ in ROWS:
-        color = AI_COLOR if group == "ai" else HUMAN_COLOR
-        ax.scatter(x, y, s=52, color=color, alpha=0.28, zorder=2, linewidths=0)
-
-    labels = {
-        "aijoey": (0.28, 1.4), "sudoingX": (0.28, 1.4), "analogalok": (0.28, -4.6),
-        "trq212": (0.28, 1.4), "VictorTaelin": (0.28, -5.2), "TheAhmadOsman": (0.24, 1.4),
-        "ClementDelangue": (-0.1, -6.2), "unclebobmartin": (-0.24, -1.6),
-        "bryan_johnson": (0.28, 1.4), "TheValueist": (0.28, 1.4), "vllm_project": (0.24, 1.4),
+    # tweet accounts labeled per panel: worth calling out at these coordinates
+    call_out = {
+        0: ["aijoey", "sudoingX", "analogalok", "trq212", "TheValueist", "TheAhmadOsman"],
+        1: ["TraffAlex", "elder_plinius", "TheValueist", "TheAhmadOsman"],
+        2: ["TraffAlex", "elder_plinius", "quasa0", "davidsenra"],
+        3: [],
     }
-    for r in tw:
-        x, y = r["triads_per_1k"], r["labeled_bullet_pct_of_bullets"]
-        ax.scatter(x, y, s=52, color="#475569", zorder=3, edgecolors="white", linewidths=0.8)
-        if r["doc"] in labels:
-            dx, dy = labels[r["doc"]]
-            ha = "right" if dx < 0 else "left"
-            ax.text(x + dx, y + dy, "@" + r["doc"], fontsize=8, color=TEXT, ha=ha)
-    ax.text(0.15, -5.8, "31 accounts along the x axis, 10 of them at (0, 0)",
-            fontsize=8, color=MUTED, ha="left", va="top")
 
-    ax.set_xlim(-0.7, 17.2)
-    ax.set_ylim(-11, 106)
-    ax.set_xlabel("Exactly-three lists per 1,000 words", fontsize=10)
-    ax.set_ylabel("Labeled bullets, % of all bullets", fontsize=10)
-    ax.set_title("42 accounts' long-form tweets on the page detector's axes",
-                 fontsize=13, fontweight="bold", loc="left", pad=10)
-    ax.tick_params(labelsize=8.5)
+    fig, axes = plt.subplots(2, 2, figsize=(9.6, 9.6))
+    fig.patch.set_facecolor(BG)
+
+    for i, (ax, (title, xk, yk, xi, yi, xl, yl, xt, yt)) in enumerate(zip(axes.flat, panels)):
+        style_axis(ax)
+        if xt is not None:
+            ax.axvline(xt, color=MUTED, linestyle="--", linewidth=1)
+        if yt is not None:
+            ax.axhline(yt, color=MUTED, linestyle="--", linewidth=1)
+        for row in ROWS:
+            color = AI_COLOR if row[1] == "ai" else HUMAN_COLOR
+            ax.scatter(row[xi], row[yi], s=44, color=color, alpha=0.3, zorder=2, linewidths=0)
+        xs = [r[xk] for r in tw]
+        ys = [r[yk] for r in tw]
+        ax.scatter(xs, ys, s=40, color=TW_COLOR, zorder=3, edgecolors="white", linewidths=0.7)
+        xspan = max(max(xs), max(row[xi] for row in ROWS))
+        for r in tw:
+            if r["doc"] in call_out[i]:
+                ax.text(r[xk] + xspan * 0.018, r[yk], "@" + r["doc"],
+                        fontsize=7.5, color=TEXT, ha="left", va="center")
+        ax.set_title(title, fontsize=10.5, pad=8, loc="left", fontweight="bold")
+        ax.set_xlabel(xl, fontsize=9)
+        ax.set_ylabel(yl, fontsize=9)
+        ax.tick_params(labelsize=8)
+
+    # match panel 1 to figure 2's limits so the two charts superimpose
+    axes.flat[0].set_xlim(-0.7, 17.2)
+    axes.flat[0].set_ylim(-11, 106)
 
     handles = [
-        plt.Line2D([], [], marker="o", linestyle="", color="#475569",
+        plt.Line2D([], [], marker="o", linestyle="", color=TW_COLOR,
                    label="Tweet samples (no ground truth)"),
-        plt.Line2D([], [], marker="o", linestyle="", color=AI_COLOR, alpha=0.28,
+        plt.Line2D([], [], marker="o", linestyle="", color=AI_COLOR, alpha=0.3,
                    label="AI pages (reference)"),
-        plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, alpha=0.28,
+        plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, alpha=0.3,
                    label="Human baselines (reference)"),
     ]
-    ax.legend(handles=handles, loc="lower right", frameon=False, fontsize=9)
-
-    fig.tight_layout()
+    fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
+               fontsize=9, bbox_to_anchor=(0.5, 0.002))
+    fig.suptitle("42 accounts' long-form tweets against the ground-truth corpus",
+                 fontsize=13, fontweight="bold", color=TEXT, x=0.055, ha="left", y=0.985)
+    fig.tight_layout(rect=(0, 0.045, 1, 0.955), h_pad=2.6, w_pad=2.6)
     fig.savefig(OUT / "tweets.svg", facecolor=BG)
     fig.savefig(OUT / "tweets.png", facecolor=BG, dpi=200)
     plt.close(fig)
