@@ -399,10 +399,56 @@ def fig6():
     plt.close(fig)
 
 
+def fig7():
+    """Flow scores for the 42 tweet samples plus this post, against the
+    threshold and group edges learned from the ground-truth corpus."""
+    root = Path(__file__).resolve().parent
+    data = json.loads((root / "results_flow.json").read_text())
+    SELF_COLOR = "#16a34a"
+    TW_COLOR = "#64748b"
+
+    rows = sorted((d["flow"], d["group"], d["doc"]) for d in data["docs"]
+                  if d["group"] in ("tweets", "self"))
+    edges = data["edges"]
+
+    fig, ax = plt.subplots(figsize=(8.6, 10.6))
+    fig.patch.set_facecolor(BG)
+    style_axis(ax)
+    ys = range(len(rows))
+    ax.barh(list(ys), [r[0] for r in rows], height=0.62,
+            color=[SELF_COLOR if r[1] == "self" else TW_COLOR for r in rows])
+    ax.set_yticks(list(ys),
+                  ["this post" if r[1] == "self" else "@" + r[2] for r in rows],
+                  fontsize=7.5)
+    for y, r in zip(ys, rows):
+        if r[1] == "self":
+            ax.get_yticklabels()[y].set_color(SELF_COLOR)
+            ax.get_yticklabels()[y].set_fontweight("bold")
+    ax.axvline(edges["threshold"], color=MUTED, linestyle="--", linewidth=1)
+    ax.text(edges["threshold"], len(rows) - 0.2,
+            f"  midpoint threshold ({edges['threshold']:.2f})",
+            fontsize=8, color=MUTED, va="top")
+    ax.axvline(edges["ai"], color=AI_COLOR, linestyle=":", linewidth=1)
+    ax.text(edges["ai"], -0.6, "highest AI page ", fontsize=7.5,
+            color=AI_COLOR, ha="right", va="top")
+    ax.axvline(edges["human"], color=HUMAN_COLOR, linestyle=":", linewidth=1)
+    ax.text(edges["human"], -0.6, " lowest human baseline", fontsize=7.5,
+            color=HUMAN_COLOR, va="top")
+    ax.set_xlabel("flow score (mean corpus percentile of sentence runs)",
+                  fontsize=9.5)
+    ax.set_title("The tweet samples on the flow metric",
+                 fontsize=13, fontweight="bold", loc="left", pad=10, color=TEXT)
+    fig.tight_layout()
+    fig.savefig(OUT / "flow-tweets.svg", facecolor=BG)
+    fig.savefig(OUT / "flow-tweets.png", facecolor=BG, dpi=200)
+    plt.close(fig)
+
+
 fig1()
 fig2()
 fig3()
 fig4()
 fig5()
 fig6()
+fig7()
 print("written to", OUT)

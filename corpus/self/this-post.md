@@ -113,7 +113,14 @@ Averaging the percentiles gives one number per document, and the groups separate
   <div id="desmeller-flow-scores" class="desmeller-chart"></div>
 </div>
 
-Pointed at the tweet samples from the next section, the metric puts 13 of the 42 accounts below the midpoint threshold, and all three accounts that cross the labeled-bullet line there are among them. That agreement is worth pausing on, because the two measurements share nothing. One counts bullet shapes and the other reads clause lengths, yet they flag the same accounts. The reference implementation is [analyze_flow.py](https://github.com/osolmaz/ai-smell/blob/main/analyze_flow.py) in the study repository, and the search that produced it, including every dead end, is preserved in the [autoresearch directory](https://github.com/osolmaz/ai-smell/tree/main/autoresearch).
+Pointed at the tweet samples from the next section, the metric puts 13 of the 42 accounts below the midpoint threshold, and all three accounts that cross the labeled-bullet line there are among them. That agreement is worth pausing on, because the two measurements share nothing. One counts bullet shapes and the other reads clause lengths, yet they flag the same accounts. The two lowest scorers sit below every AI landing page in the corpus, and the usual register caveat applies with extra force here, since the threshold was calibrated on landing pages against long-form prose and a punchy feed style will read as low flow on its own.
+
+<img class="desmeller-fallback" src="/img/ai-de-smeller/flow-tweets.svg" alt="Horizontal bar chart of flow scores for the 42 tweet-account samples plus this post, sorted ascending, with a dashed midpoint threshold from the ground-truth corpus and dotted lines marking the highest AI page and the lowest human baseline, and 13 accounts falling below the threshold">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-flow-tweets" class="desmeller-chart" style="height:900px"></div>
+</div>
+
+The reference implementation is [analyze_flow.py](https://github.com/osolmaz/ai-smell/blob/main/analyze_flow.py) in the study repository, and the search that produced it, including every dead end, is preserved in the [autoresearch directory](https://github.com/osolmaz/ai-smell/tree/main/autoresearch).
 
 ## Long-form tweets in the wild
 

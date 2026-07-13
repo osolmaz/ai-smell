@@ -388,7 +388,7 @@
    "words": 6283,
    "mtld": 85.0,
    "zipf_mean": 4.98,
-   "flow": 0.405
+   "flow": 0.404
   },
   {
    "doc": "TheValueist",
@@ -403,7 +403,7 @@
    "words": 4662,
    "mtld": 154.8,
    "zipf_mean": 4.96,
-   "flow": 0.637
+   "flow": 0.636
   },
   {
    "doc": "TraffAlex",
@@ -463,7 +463,7 @@
    "words": 2290,
    "mtld": 121.5,
    "zipf_mean": 5.54,
-   "flow": 0.53
+   "flow": 0.529
   },
   {
    "doc": "aijoey",
@@ -905,15 +905,15 @@
    "group": "self",
    "label": "this post",
    "em_dash_per_1k": 0.0,
-   "triads_per_1k": 0.46,
+   "triads_per_1k": 0.45,
    "labeled_bullet_pct_of_bullets": 0.0,
-   "first_person_per_1k": 8.1,
+   "first_person_per_1k": 7.9,
    "frag_pct": 0.5,
    "ttr_280": 0.6,
-   "words": 4309,
-   "mtld": 97.1,
-   "zipf_mean": 5.49,
-   "flow": 0.557
+   "words": 4426,
+   "mtld": 97.5,
+   "zipf_mean": 5.48,
+   "flow": 0.562
   }
  ],
  "flow_examples": [

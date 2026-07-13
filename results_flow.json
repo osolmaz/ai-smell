@@ -2303,7 +2303,7 @@
       "group": "tweets",
       "sentences": 347,
       "mean_run": 10.8,
-      "flow": 0.405,
+      "flow": 0.404,
       "spines": [
         16,
         6,
@@ -2659,7 +2659,7 @@
       "group": "tweets",
       "sentences": 219,
       "mean_run": 13.3,
-      "flow": 0.637,
+      "flow": 0.636,
       "spines": [
         18,
         8,
@@ -3563,7 +3563,7 @@
       "group": "tweets",
       "sentences": 134,
       "mean_run": 10.9,
-      "flow": 0.53,
+      "flow": 0.529,
       "spines": [
         6,
         3,
@@ -9321,9 +9321,9 @@
     {
       "doc": "this-post",
       "group": "self",
-      "sentences": 184,
-      "mean_run": 11.5,
-      "flow": 0.557,
+      "sentences": 185,
+      "mean_run": 11.7,
+      "flow": 0.562,
       "spines": [
         6,
         12,
@@ -9466,7 +9466,8 @@
         25,
         6,
         10,
-        8,
+        24,
+        23,
         7,
         12,
         10,

@@ -3586,26 +3586,26 @@
     {
       "doc": "this-post",
       "group": "self",
-      "words": 4309,
-      "sentences": 184,
-      "mean_sentence_len": 23.4,
-      "stdev_sentence_len": 16.5,
-      "cv_sentence_len": 0.7,
+      "words": 4426,
+      "sentences": 185,
+      "mean_sentence_len": 23.9,
+      "stdev_sentence_len": 17.8,
+      "cv_sentence_len": 0.74,
       "frag_pct": 0.5,
-      "long_pct": 17.4,
+      "long_pct": 17.8,
       "em_dash_per_1k": 0.0,
       "semicolon_per_1k": 1.4,
-      "colon_per_1k": 2.1,
-      "bullet_line_pct": 4.8,
+      "colon_per_1k": 2.0,
+      "bullet_line_pct": 4.5,
       "labeled_bullets": 0,
       "labeled_bullet_pct_of_bullets": 0.0,
-      "headings_per_1k": 1.9,
-      "contrast_per_1k": 2.09,
+      "headings_per_1k": 1.8,
+      "contrast_per_1k": 2.03,
       "not_just_per_1k": 0.0,
-      "triads_per_1k": 0.46,
+      "triads_per_1k": 0.45,
       "long_lists_per_1k": 0.0,
       "no_anaphora": 0,
-      "first_person_per_1k": 8.1,
+      "first_person_per_1k": 7.9,
       "second_person_per_1k": 3.2,
       "ttr_280": 0.6,
       "top_openers": [
@@ -3618,11 +3618,11 @@
           8
         ],
         [
-          "that",
-          6
+          "<img",
+          7
         ],
         [
-          "<img",
+          "that",
           6
         ],
         [
@@ -3641,7 +3641,7 @@
         "35": 11,
         "40": 5,
         "45": 4,
-        "50": 12
+        "50": 13
       }
     }
   ],
