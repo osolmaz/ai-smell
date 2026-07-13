@@ -20,7 +20,8 @@ The measuring script strips code, splits sentences, and counts things. There is 
 
 The chart below shows every document against every metric, with the AI pages in orange and the human baselines in blue. The prose after it sticks to the ratios, because the ratios are the story, and the raw ranges are collapsed underneath for anyone who wants to check them.
 
-<img src="/img/ai-de-smeller/metrics.svg" alt="Six-panel bar chart comparing em-dash rate, exactly-three-list rate, labeled-bullet share, first-person rate, fragment-sentence share, and type-token ratio across all eighteen documents">
+<img class="desmeller-fallback" src="/img/ai-de-smeller/metrics.svg" alt="Six-panel bar chart comparing em-dash rate, exactly-three-list rate, labeled-bullet share, first-person rate, fragment-sentence share, and type-token ratio across all eighteen documents">
+<div class="desmeller-charts" id="desmeller-metrics" style="display:none"></div>
 
 <details markdown="1">
 <summary markdown="span">Raw ranges per metric</summary>
@@ -66,7 +67,10 @@ The expanded corpus simplified the detector, because the two structural metrics 
 
 Plotting the two structural metrics against each other shows how much margin the thresholds have. Every human text sits in the bottom-left corner, below both lines, and every AI page sits far outside both.
 
-<img src="/img/ai-de-smeller/detector.svg" alt="Scatter plot of exactly-three-list rate against labeled-bullet share for all eighteen documents, with dashed threshold lines showing the human texts clustered near the origin and the AI pages far outside both thresholds">
+<img class="desmeller-fallback" src="/img/ai-de-smeller/detector.svg" alt="Scatter plot of exactly-three-list rate against labeled-bullet share for all eighteen documents, with dashed threshold lines showing the human texts clustered near the origin and the AI pages far outside both thresholds">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-detector" class="desmeller-chart"></div>
+</div>
 
 Eighteen documents make a demonstration rather than a validated classifier. The first version of this study used only essays and documentation as baselines, which left the objection that the metrics were separating registers rather than authors, so the corpus now includes three pre-LLM READMEs that sell tools the way the AI pages do. The structural gaps survived that control untouched, while two metrics that looked strong against essays alone, first person and lexical diversity, collapsed into register signals. That is the argument for keeping the baselines adversarial. The next escalation would be a large sample of post-LLM, human-written landing pages, but the sizes of the surviving gaps, three-fold at the closest edge and roughly twenty-fold on average with no overlap, make me confident the structural metrics would hold.
 
@@ -76,7 +80,12 @@ The corpora above have ground truth, which is what makes the thresholds checkabl
 
 The chart puts the 42 samples over three metric pairs, with the ground-truth pages and baselines left in faintly in every panel so the wild samples can be read against the corpus that set the thresholds. The first panel repeats the detector chart exactly, same axes, same limits, same two thresholds. Every panel also carries one more point, marked as a green diamond: this post itself, measured the same way as everything else.
 
-<img src="/img/ai-de-smeller/tweets.svg" alt="Three vertically stacked scatter panels of 42 tweet-account samples, with the AI pages, the human baselines, and this post itself shown in every panel: the detector's triad and labeled-bullet axes with thresholds, em dashes against exactly-three lists, and em dashes against fragment sentences">
+<img class="desmeller-fallback" src="/img/ai-de-smeller/tweets.svg" alt="Three vertically stacked scatter panels of 42 tweet-account samples, with the AI pages, the human baselines, and this post itself shown in every panel: the detector's triad and labeled-bullet axes with thresholds, em dashes against exactly-three lists, and em dashes against fragment sentences">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-tweets-detector" class="desmeller-chart"></div>
+  <div id="desmeller-tweets-dash-triads" class="desmeller-chart"></div>
+  <div id="desmeller-tweets-dash-frags" class="desmeller-chart"></div>
+</div>
 
 Nothing here is a verdict, since none of these samples has a known author process. Under the unchanged rules of the first panel, seven of the 42 accounts trip the detector: four cross the triad line and three cross the labeled-bullet line, and none cross both. On the landing pages the tells came bundled, every page far past both thresholds at once, while in the feed each flagged account trips exactly one rule. The bullet share also rests on smaller counts here, since a thread carries far fewer bullets than a landing page, and one of the three flagged accounts crosses the line on just two labeled bullets. So the thresholds transfer, but the confidence does not; a verdict in the feed would need feed-specific baselines.
 
@@ -102,3 +111,6 @@ The corpus splits into four groups there:
 - [corpus/human](https://github.com/osolmaz/ai-smell/tree/main/corpus/human) holds the eight pre-LLM baselines: the SQLite testing docs, essays by Joel Spolsky (2000), antirez (2018), Paul Graham (2009), and Julia Evans (2019), and the ripgrep, Redis, and Requests READMEs at their 2016–2017 git tags.
 - [corpus/tweets](https://github.com/osolmaz/ai-smell/tree/main/corpus/tweets) holds the 42 long-form tweet samples, one file per account, date-sorted, with a link back to each tweet.
 - [corpus/self](https://github.com/osolmaz/ai-smell/tree/main/corpus/self) holds this post itself, archived as measured, provably AI-written by its own disclaimer. Written under the kill-ai-smell skill, it clears the detector from the other side: zero em dashes, exactly-three lists at a quarter of the threshold, and no labeled bullets. The tells are a default, not a fingerprint, and a model instructed against them stops producing them.
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script defer src="/assets/js/ai-de-smeller.js"></script>
