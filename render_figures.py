@@ -7,11 +7,12 @@ Figure 2: scatter of exactly-three-list rate vs labeled-bullet share, the
 two metrics that each classify the whole corpus alone, with the detector
 thresholds drawn as dashed reference lines.
 
-Figure 3: four scatter panels of the in-the-wild tweet samples (from
-results.json) over different metric pairs, with the ground-truth pages
-and baselines drawn faintly for reference in every panel and the
-detector thresholds marked where they exist. The first panel repeats
-figure 2's axes and limits exactly.
+Figure 3: three vertically stacked scatter panels of the in-the-wild
+tweet samples (from results.json) over different metric pairs, with the
+ground-truth pages and baselines drawn faintly for reference in every
+panel and the detector thresholds marked where they exist. The first
+panel repeats figure 2's axes and limits exactly and also carries the
+blog post itself as a green diamond.
 
 Solid light background baked in so the figures read on the blog's light
 and dark themes alike.
@@ -168,7 +169,9 @@ def fig2():
 def fig3():
     docs = json.loads((Path(__file__).resolve().parent / "results.json").read_text())["docs"]
     tw = [r for r in docs if r["group"] == "tweets"]
+    self_doc = next(r for r in docs if r["group"] == "self")
     TW_COLOR = "#475569"
+    SELF_COLOR = "#16a34a"
 
     # (title, json x key, json y key, ROWS x idx, ROWS y idx,
     #  x label, y label, x threshold, y threshold)
@@ -182,9 +185,6 @@ def fig3():
         ("Em dashes against fragment sentences",
          "em_dash_per_1k", "frag_pct", 2, 6,
          "Em dashes / 1k words", "Fragment sentences, % of sentences", None, None),
-        ("First person against lexical diversity",
-         "first_person_per_1k", "ttr_280", 5, 7,
-         "First person / 1k words", "Type-token ratio (first 280 words)", None, None),
     ]
 
     # tweet accounts labeled per panel: worth calling out at these coordinates
@@ -192,10 +192,9 @@ def fig3():
         0: ["aijoey", "sudoingX", "analogalok", "trq212", "TheValueist", "TheAhmadOsman"],
         1: ["TraffAlex", "elder_plinius", "TheValueist", "TheAhmadOsman"],
         2: ["TraffAlex", "elder_plinius", "quasa0", "davidsenra"],
-        3: [],
     }
 
-    fig, axes = plt.subplots(2, 2, figsize=(9.6, 9.6))
+    fig, axes = plt.subplots(3, 1, figsize=(8.0, 15.6))
     fig.patch.set_facecolor(BG)
 
     for i, (ax, (title, xk, yk, xi, yi, xl, yl, xt, yt)) in enumerate(zip(axes.flat, panels)):
@@ -220,9 +219,22 @@ def fig3():
         ax.set_ylabel(yl, fontsize=9)
         ax.tick_params(labelsize=8)
 
-    # match panel 1 to figure 2's limits so the two charts superimpose
-    axes.flat[0].set_xlim(-0.7, 17.2)
-    axes.flat[0].set_ylim(-11, 106)
+    # match panel 1 to figure 2's limits so the two charts superimpose,
+    # and put the post itself on it
+    ax0 = axes.flat[0]
+    ax0.set_xlim(-0.7, 17.2)
+    ax0.set_ylim(-11, 106)
+    sx = self_doc["triads_per_1k"]
+    sy = self_doc["labeled_bullet_pct_of_bullets"]
+    ax0.scatter(sx, sy, s=64, color=SELF_COLOR, zorder=4, marker="D",
+                edgecolors="white", linewidths=0.8)
+    ax0.text(sx + 0.3, sy + 4.5, "this post", fontsize=8, color=SELF_COLOR,
+             ha="left", fontweight="bold")
+    ax0.text(3.15, 55, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, rotation=90)
+    ax0.text(16.9, 32.5, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
+
+    # label the triad threshold in the second panel too
+    axes.flat[1].text(58, 3.25, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, ha="right")
 
     handles = [
         plt.Line2D([], [], marker="o", linestyle="", color=TW_COLOR,
@@ -231,12 +243,14 @@ def fig3():
                    label="AI pages (reference)"),
         plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, alpha=0.3,
                    label="Human baselines (reference)"),
+        plt.Line2D([], [], marker="D", linestyle="", color=SELF_COLOR,
+                   label="This post"),
     ]
-    fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
+    fig.legend(handles=handles, loc="lower center", ncol=2, frameon=False,
                fontsize=9, bbox_to_anchor=(0.5, 0.002))
     fig.suptitle("42 accounts' long-form tweets against the ground-truth corpus",
-                 fontsize=13, fontweight="bold", color=TEXT, x=0.055, ha="left", y=0.985)
-    fig.tight_layout(rect=(0, 0.045, 1, 0.955), h_pad=2.6, w_pad=2.6)
+                 fontsize=13, fontweight="bold", color=TEXT, x=0.055, ha="left", y=0.99)
+    fig.tight_layout(rect=(0, 0.035, 1, 0.972), h_pad=2.8)
     fig.savefig(OUT / "tweets.svg", facecolor=BG)
     fig.savefig(OUT / "tweets.png", facecolor=BG, dpi=200)
     plt.close(fig)
