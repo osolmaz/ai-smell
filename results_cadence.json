@@ -1,0 +1,553 @@
+{
+  "docs": [
+    {
+      "doc": "clawpatch",
+      "group": "ai",
+      "sentences": 28,
+      "stamp_rate": 11.1,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 3.6,
+      "drift": 0.38
+    },
+    {
+      "doc": "crabbox",
+      "group": "ai",
+      "sentences": 59,
+      "stamp_rate": 25.9,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 3.4,
+      "drift": 0.63
+    },
+    {
+      "doc": "fs-safe",
+      "group": "ai",
+      "sentences": 46,
+      "stamp_rate": 22.2,
+      "clause_balance": 0.27,
+      "balanced_long_pct": 2.2,
+      "drift": 0.43
+    },
+    {
+      "doc": "gitcrawl",
+      "group": "ai",
+      "sentences": 23,
+      "stamp_rate": 13.6,
+      "clause_balance": 0.21,
+      "balanced_long_pct": 4.3,
+      "drift": 0.32
+    },
+    {
+      "doc": "gogcli",
+      "group": "ai",
+      "sentences": 55,
+      "stamp_rate": 7.4,
+      "clause_balance": 0.32,
+      "balanced_long_pct": 1.8,
+      "drift": 0.36
+    },
+    {
+      "doc": "goplaces",
+      "group": "ai",
+      "sentences": 50,
+      "stamp_rate": 10.2,
+      "clause_balance": 0.38,
+      "balanced_long_pct": 0.0,
+      "drift": 0.41
+    },
+    {
+      "doc": "imsg",
+      "group": "ai",
+      "sentences": 43,
+      "stamp_rate": 14.3,
+      "clause_balance": 0.37,
+      "balanced_long_pct": 0.0,
+      "drift": 0.32
+    },
+    {
+      "doc": "mcporter",
+      "group": "ai",
+      "sentences": 36,
+      "stamp_rate": 8.6,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 0.0,
+      "drift": 0.38
+    },
+    {
+      "doc": "spogo",
+      "group": "ai",
+      "sentences": 35,
+      "stamp_rate": 14.7,
+      "clause_balance": 0.4,
+      "balanced_long_pct": 0.0,
+      "drift": 0.28
+    },
+    {
+      "doc": "wacli",
+      "group": "ai",
+      "sentences": 51,
+      "stamp_rate": 12.0,
+      "clause_balance": 0.35,
+      "balanced_long_pct": 2.0,
+      "drift": 0.32
+    },
+    {
+      "doc": "antirez-terminology",
+      "group": "human",
+      "sentences": 43,
+      "stamp_rate": 28.6,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 7.0,
+      "drift": 0.45
+    },
+    {
+      "doc": "joel-rewrite",
+      "group": "human",
+      "sentences": 96,
+      "stamp_rate": 20.0,
+      "clause_balance": 0.26,
+      "balanced_long_pct": 4.2,
+      "drift": 0.45
+    },
+    {
+      "doc": "jvns-brag-documents-2019",
+      "group": "human",
+      "sentences": 69,
+      "stamp_rate": 26.5,
+      "clause_balance": 0.13,
+      "balanced_long_pct": 0.0,
+      "drift": 0.62
+    },
+    {
+      "doc": "makers-schedule-2009",
+      "group": "human",
+      "sentences": 69,
+      "stamp_rate": 35.3,
+      "clause_balance": 0.39,
+      "balanced_long_pct": 5.8,
+      "drift": 0.55
+    },
+    {
+      "doc": "redis-2016",
+      "group": "human",
+      "sentences": 38,
+      "stamp_rate": 24.3,
+      "clause_balance": 0.21,
+      "balanced_long_pct": 5.3,
+      "drift": 0.42
+    },
+    {
+      "doc": "requests-2017",
+      "group": "human",
+      "sentences": 19,
+      "stamp_rate": 38.9,
+      "clause_balance": 0.31,
+      "balanced_long_pct": 0.0,
+      "drift": 0.27
+    },
+    {
+      "doc": "ripgrep-2016",
+      "group": "human",
+      "sentences": 76,
+      "stamp_rate": 24.0,
+      "clause_balance": 0.17,
+      "balanced_long_pct": 2.6,
+      "drift": 0.45
+    },
+    {
+      "doc": "sqlite-testing",
+      "group": "human",
+      "sentences": 347,
+      "stamp_rate": 32.4,
+      "clause_balance": 0.23,
+      "balanced_long_pct": 4.3,
+      "drift": 0.48
+    },
+    {
+      "doc": "ClementDelangue",
+      "group": "tweets",
+      "sentences": 136,
+      "stamp_rate": 25.2,
+      "clause_balance": 0.19,
+      "balanced_long_pct": 3.7,
+      "drift": 0.45
+    },
+    {
+      "doc": "ESYudkowsky",
+      "group": "tweets",
+      "sentences": 129,
+      "stamp_rate": 31.2,
+      "clause_balance": 0.32,
+      "balanced_long_pct": 7.8,
+      "drift": 0.55
+    },
+    {
+      "doc": "GergelyOrosz",
+      "group": "tweets",
+      "sentences": 91,
+      "stamp_rate": 27.8,
+      "clause_balance": 0.16,
+      "balanced_long_pct": 0.0,
+      "drift": 0.43
+    },
+    {
+      "doc": "Pragmatic_Eng",
+      "group": "tweets",
+      "sentences": 112,
+      "stamp_rate": 25.2,
+      "clause_balance": 0.28,
+      "balanced_long_pct": 8.0,
+      "drift": 0.44
+    },
+    {
+      "doc": "Rafa_Schwinger",
+      "group": "tweets",
+      "sentences": 113,
+      "stamp_rate": 22.3,
+      "clause_balance": 0.32,
+      "balanced_long_pct": 21.2,
+      "drift": 0.36
+    },
+    {
+      "doc": "SemiAnalysis_",
+      "group": "tweets",
+      "sentences": 139,
+      "stamp_rate": 15.9,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 3.6,
+      "drift": 0.52
+    },
+    {
+      "doc": "SlimTradeyBaby",
+      "group": "tweets",
+      "sentences": 170,
+      "stamp_rate": 36.7,
+      "clause_balance": 0.28,
+      "balanced_long_pct": 4.1,
+      "drift": 0.54
+    },
+    {
+      "doc": "TheAhmadOsman",
+      "group": "tweets",
+      "sentences": 347,
+      "stamp_rate": 28.9,
+      "clause_balance": 0.23,
+      "balanced_long_pct": 1.4,
+      "drift": 0.58
+    },
+    {
+      "doc": "TheValueist",
+      "group": "tweets",
+      "sentences": 219,
+      "stamp_rate": 25.7,
+      "clause_balance": 0.2,
+      "balanced_long_pct": 3.7,
+      "drift": 0.53
+    },
+    {
+      "doc": "TraffAlex",
+      "group": "tweets",
+      "sentences": 153,
+      "stamp_rate": 24.3,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 0.7,
+      "drift": 0.49
+    },
+    {
+      "doc": "VictorTaelin",
+      "group": "tweets",
+      "sentences": 280,
+      "stamp_rate": 25.4,
+      "clause_balance": 0.25,
+      "balanced_long_pct": 7.5,
+      "drift": 0.46
+    },
+    {
+      "doc": "WillManidis",
+      "group": "tweets",
+      "sentences": 216,
+      "stamp_rate": 25.1,
+      "clause_balance": 0.3,
+      "balanced_long_pct": 3.7,
+      "drift": 0.45
+    },
+    {
+      "doc": "_avichawla",
+      "group": "tweets",
+      "sentences": 134,
+      "stamp_rate": 30.1,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 5.2,
+      "drift": 0.37
+    },
+    {
+      "doc": "aijoey",
+      "group": "tweets",
+      "sentences": 182,
+      "stamp_rate": 26.5,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 2.7,
+      "drift": 0.51
+    },
+    {
+      "doc": "analogalok",
+      "group": "tweets",
+      "sentences": 683,
+      "stamp_rate": 26.4,
+      "clause_balance": 0.25,
+      "balanced_long_pct": 2.5,
+      "drift": 0.49
+    },
+    {
+      "doc": "bingxu_",
+      "group": "tweets",
+      "sentences": 139,
+      "stamp_rate": 27.5,
+      "clause_balance": 0.27,
+      "balanced_long_pct": 7.9,
+      "drift": 0.43
+    },
+    {
+      "doc": "bryan_johnson",
+      "group": "tweets",
+      "sentences": 511,
+      "stamp_rate": 32.0,
+      "clause_balance": 0.28,
+      "balanced_long_pct": 3.1,
+      "drift": 0.51
+    },
+    {
+      "doc": "davepl1968",
+      "group": "tweets",
+      "sentences": 274,
+      "stamp_rate": 27.8,
+      "clause_balance": 0.23,
+      "balanced_long_pct": 1.8,
+      "drift": 0.49
+    },
+    {
+      "doc": "davidsenra",
+      "group": "tweets",
+      "sentences": 79,
+      "stamp_rate": 24.4,
+      "clause_balance": 0.31,
+      "balanced_long_pct": 2.5,
+      "drift": 0.46
+    },
+    {
+      "doc": "dwarkesh_sp",
+      "group": "tweets",
+      "sentences": 97,
+      "stamp_rate": 31.2,
+      "clause_balance": 0.2,
+      "balanced_long_pct": 2.1,
+      "drift": 0.44
+    },
+    {
+      "doc": "elder_plinius",
+      "group": "tweets",
+      "sentences": 130,
+      "stamp_rate": 22.5,
+      "clause_balance": 0.2,
+      "balanced_long_pct": 0.0,
+      "drift": 0.47
+    },
+    {
+      "doc": "ishaansehgal",
+      "group": "tweets",
+      "sentences": 136,
+      "stamp_rate": 25.9,
+      "clause_balance": 0.36,
+      "balanced_long_pct": 8.1,
+      "drift": 0.5
+    },
+    {
+      "doc": "ivanfioravanti",
+      "group": "tweets",
+      "sentences": 89,
+      "stamp_rate": 15.9,
+      "clause_balance": 0.18,
+      "balanced_long_pct": 2.2,
+      "drift": 0.42
+    },
+    {
+      "doc": "justinskycak",
+      "group": "tweets",
+      "sentences": 101,
+      "stamp_rate": 24.0,
+      "clause_balance": 0.19,
+      "balanced_long_pct": 5.0,
+      "drift": 0.43
+    },
+    {
+      "doc": "kunchenguid",
+      "group": "tweets",
+      "sentences": 64,
+      "stamp_rate": 19.0,
+      "clause_balance": 0.21,
+      "balanced_long_pct": 4.7,
+      "drift": 0.48
+    },
+    {
+      "doc": "kwindla",
+      "group": "tweets",
+      "sentences": 119,
+      "stamp_rate": 27.1,
+      "clause_balance": 0.26,
+      "balanced_long_pct": 5.0,
+      "drift": 0.45
+    },
+    {
+      "doc": "levelsio",
+      "group": "tweets",
+      "sentences": 54,
+      "stamp_rate": 13.2,
+      "clause_balance": 0.12,
+      "balanced_long_pct": 1.9,
+      "drift": 0.46
+    },
+    {
+      "doc": "mitchellh",
+      "group": "tweets",
+      "sentences": 235,
+      "stamp_rate": 31.2,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 2.1,
+      "drift": 0.47
+    },
+    {
+      "doc": "mksglu",
+      "group": "tweets",
+      "sentences": 230,
+      "stamp_rate": 25.3,
+      "clause_balance": 0.29,
+      "balanced_long_pct": 2.2,
+      "drift": 0.47
+    },
+    {
+      "doc": "natolambert",
+      "group": "tweets",
+      "sentences": 135,
+      "stamp_rate": 33.6,
+      "clause_balance": 0.18,
+      "balanced_long_pct": 5.2,
+      "drift": 0.53
+    },
+    {
+      "doc": "ollobrains",
+      "group": "tweets",
+      "sentences": 163,
+      "stamp_rate": 34.0,
+      "clause_balance": 0.21,
+      "balanced_long_pct": 3.1,
+      "drift": 0.59
+    },
+    {
+      "doc": "onusoz",
+      "group": "tweets",
+      "sentences": 230,
+      "stamp_rate": 26.6,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 5.2,
+      "drift": 0.53
+    },
+    {
+      "doc": "quasa0",
+      "group": "tweets",
+      "sentences": 156,
+      "stamp_rate": 23.2,
+      "clause_balance": 0.31,
+      "balanced_long_pct": 5.8,
+      "drift": 0.48
+    },
+    {
+      "doc": "saranormous",
+      "group": "tweets",
+      "sentences": 126,
+      "stamp_rate": 23.2,
+      "clause_balance": 0.34,
+      "balanced_long_pct": 11.1,
+      "drift": 0.38
+    },
+    {
+      "doc": "stevibe",
+      "group": "tweets",
+      "sentences": 189,
+      "stamp_rate": 15.4,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 1.1,
+      "drift": 0.43
+    },
+    {
+      "doc": "sudoingX",
+      "group": "tweets",
+      "sentences": 442,
+      "stamp_rate": 25.6,
+      "clause_balance": 0.3,
+      "balanced_long_pct": 4.3,
+      "drift": 0.48
+    },
+    {
+      "doc": "tbpn",
+      "group": "tweets",
+      "sentences": 110,
+      "stamp_rate": 18.3,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 6.4,
+      "drift": 0.55
+    },
+    {
+      "doc": "teortaxesTex",
+      "group": "tweets",
+      "sentences": 146,
+      "stamp_rate": 23.4,
+      "clause_balance": 0.21,
+      "balanced_long_pct": 1.4,
+      "drift": 0.4
+    },
+    {
+      "doc": "trq212",
+      "group": "tweets",
+      "sentences": 106,
+      "stamp_rate": 39.0,
+      "clause_balance": 0.22,
+      "balanced_long_pct": 2.8,
+      "drift": 0.47
+    },
+    {
+      "doc": "unclebobmartin",
+      "group": "tweets",
+      "sentences": 212,
+      "stamp_rate": 29.9,
+      "clause_balance": 0.29,
+      "balanced_long_pct": 2.8,
+      "drift": 0.58
+    },
+    {
+      "doc": "vllm_project",
+      "group": "tweets",
+      "sentences": 104,
+      "stamp_rate": 14.6,
+      "clause_balance": 0.19,
+      "balanced_long_pct": 4.8,
+      "drift": 0.44
+    },
+    {
+      "doc": "willdepue",
+      "group": "tweets",
+      "sentences": 114,
+      "stamp_rate": 16.8,
+      "clause_balance": 0.24,
+      "balanced_long_pct": 10.5,
+      "drift": 0.42
+    },
+    {
+      "doc": "this-post",
+      "group": "self",
+      "sentences": 152,
+      "stamp_rate": 27.2,
+      "clause_balance": 0.34,
+      "balanced_long_pct": 16.4,
+      "drift": 0.48
+    }
+  ]
+}
