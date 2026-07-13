@@ -1,0 +1,614 @@
+{
+  "docs": [
+    {
+      "doc": "clawpatch",
+      "group": "ai",
+      "sentences": 28,
+      "npvi_sent": 92.7,
+      "ac1_sent": -0.29,
+      "clause_words": 4.2,
+      "npvi_clause": 61.3,
+      "ac1_clause": 0.26
+    },
+    {
+      "doc": "crabbox",
+      "group": "ai",
+      "sentences": 59,
+      "npvi_sent": 47.2,
+      "ac1_sent": 0.3,
+      "clause_words": 4.4,
+      "npvi_clause": 64.3,
+      "ac1_clause": 0.31
+    },
+    {
+      "doc": "fs-safe",
+      "group": "ai",
+      "sentences": 46,
+      "npvi_sent": 62.2,
+      "ac1_sent": -0.08,
+      "clause_words": 4.5,
+      "npvi_clause": 76.7,
+      "ac1_clause": 0.05
+    },
+    {
+      "doc": "gitcrawl",
+      "group": "ai",
+      "sentences": 23,
+      "npvi_sent": 98.6,
+      "ac1_sent": -0.07,
+      "clause_words": 5.6,
+      "npvi_clause": 64.3,
+      "ac1_clause": 0.4
+    },
+    {
+      "doc": "gogcli",
+      "group": "ai",
+      "sentences": 55,
+      "npvi_sent": 110.9,
+      "ac1_sent": -0.43,
+      "clause_words": 3.8,
+      "npvi_clause": 60.8,
+      "ac1_clause": 0.07
+    },
+    {
+      "doc": "goplaces",
+      "group": "ai",
+      "sentences": 50,
+      "npvi_sent": 84.0,
+      "ac1_sent": 0.0,
+      "clause_words": 3.3,
+      "npvi_clause": 58.9,
+      "ac1_clause": 0.14
+    },
+    {
+      "doc": "imsg",
+      "group": "ai",
+      "sentences": 43,
+      "npvi_sent": 110.1,
+      "ac1_sent": -0.57,
+      "clause_words": 4.5,
+      "npvi_clause": 74.8,
+      "ac1_clause": -0.1
+    },
+    {
+      "doc": "mcporter",
+      "group": "ai",
+      "sentences": 36,
+      "npvi_sent": 93.2,
+      "ac1_sent": -0.31,
+      "clause_words": 4.5,
+      "npvi_clause": 68.3,
+      "ac1_clause": 0.16
+    },
+    {
+      "doc": "spogo",
+      "group": "ai",
+      "sentences": 35,
+      "npvi_sent": 97.7,
+      "ac1_sent": -0.49,
+      "clause_words": 4.0,
+      "npvi_clause": 57.8,
+      "ac1_clause": -0.08
+    },
+    {
+      "doc": "wacli",
+      "group": "ai",
+      "sentences": 51,
+      "npvi_sent": 95.4,
+      "ac1_sent": -0.4,
+      "clause_words": 4.3,
+      "npvi_clause": 60.8,
+      "ac1_clause": 0.13
+    },
+    {
+      "doc": "antirez-terminology",
+      "group": "human",
+      "sentences": 43,
+      "npvi_sent": 64.0,
+      "ac1_sent": 0.07,
+      "clause_words": 9.3,
+      "npvi_clause": 67.6,
+      "ac1_clause": 0.1
+    },
+    {
+      "doc": "joel-rewrite",
+      "group": "human",
+      "sentences": 96,
+      "npvi_sent": 71.3,
+      "ac1_sent": -0.02,
+      "clause_words": 8.1,
+      "npvi_clause": 77.5,
+      "ac1_clause": 0.05
+    },
+    {
+      "doc": "jvns-brag-documents-2019",
+      "group": "human",
+      "sentences": 69,
+      "npvi_sent": 58.9,
+      "ac1_sent": 0.2,
+      "clause_words": 12.0,
+      "npvi_clause": 78.6,
+      "ac1_clause": 0.26
+    },
+    {
+      "doc": "makers-schedule-2009",
+      "group": "human",
+      "sentences": 69,
+      "npvi_sent": 52.9,
+      "ac1_sent": 0.11,
+      "clause_words": 8.5,
+      "npvi_clause": 60.4,
+      "ac1_clause": 0.01
+    },
+    {
+      "doc": "redis-2016",
+      "group": "human",
+      "sentences": 38,
+      "npvi_sent": 58.3,
+      "ac1_sent": -0.01,
+      "clause_words": 8.2,
+      "npvi_clause": 77.1,
+      "ac1_clause": 0.17
+    },
+    {
+      "doc": "requests-2017",
+      "group": "human",
+      "sentences": 19,
+      "npvi_sent": 58.7,
+      "ac1_sent": -0.35,
+      "clause_words": 6.5,
+      "npvi_clause": 77.8,
+      "ac1_clause": 0.17
+    },
+    {
+      "doc": "ripgrep-2016",
+      "group": "human",
+      "sentences": 76,
+      "npvi_sent": 71.9,
+      "ac1_sent": 0.04,
+      "clause_words": 5.7,
+      "npvi_clause": 77.8,
+      "ac1_clause": 0.17
+    },
+    {
+      "doc": "sqlite-testing",
+      "group": "human",
+      "sentences": 347,
+      "npvi_sent": 55.6,
+      "ac1_sent": 0.03,
+      "clause_words": 9.9,
+      "npvi_clause": 76.5,
+      "ac1_clause": 0.08
+    },
+    {
+      "doc": "ClementDelangue",
+      "group": "tweets",
+      "sentences": 136,
+      "npvi_sent": 69.9,
+      "ac1_sent": 0.01,
+      "clause_words": 6.8,
+      "npvi_clause": 85.6,
+      "ac1_clause": -0.06
+    },
+    {
+      "doc": "ESYudkowsky",
+      "group": "tweets",
+      "sentences": 129,
+      "npvi_sent": 63.7,
+      "ac1_sent": 0.09,
+      "clause_words": 10.1,
+      "npvi_clause": 63.7,
+      "ac1_clause": 0.09
+    },
+    {
+      "doc": "GergelyOrosz",
+      "group": "tweets",
+      "sentences": 91,
+      "npvi_sent": 69.4,
+      "ac1_sent": 0.06,
+      "clause_words": 7.2,
+      "npvi_clause": 78.9,
+      "ac1_clause": 0.07
+    },
+    {
+      "doc": "Pragmatic_Eng",
+      "group": "tweets",
+      "sentences": 112,
+      "npvi_sent": 70.3,
+      "ac1_sent": -0.07,
+      "clause_words": 8.1,
+      "npvi_clause": 83.3,
+      "ac1_clause": -0.09
+    },
+    {
+      "doc": "Rafa_Schwinger",
+      "group": "tweets",
+      "sentences": 113,
+      "npvi_sent": 64.8,
+      "ac1_sent": 0.01,
+      "clause_words": 8.6,
+      "npvi_clause": 76.5,
+      "ac1_clause": 0.13
+    },
+    {
+      "doc": "SemiAnalysis_",
+      "group": "tweets",
+      "sentences": 139,
+      "npvi_sent": 66.4,
+      "ac1_sent": 0.1,
+      "clause_words": 7.6,
+      "npvi_clause": 80.1,
+      "ac1_clause": 0.14
+    },
+    {
+      "doc": "SlimTradeyBaby",
+      "group": "tweets",
+      "sentences": 170,
+      "npvi_sent": 61.8,
+      "ac1_sent": 0.19,
+      "clause_words": 7.3,
+      "npvi_clause": 66.9,
+      "ac1_clause": 0.15
+    },
+    {
+      "doc": "TheAhmadOsman",
+      "group": "tweets",
+      "sentences": 347,
+      "npvi_sent": 63.8,
+      "ac1_sent": 0.26,
+      "clause_words": 6.2,
+      "npvi_clause": 65.8,
+      "ac1_clause": 0.15
+    },
+    {
+      "doc": "TheValueist",
+      "group": "tweets",
+      "sentences": 219,
+      "npvi_sent": 47.4,
+      "ac1_sent": 0.16,
+      "clause_words": 6.5,
+      "npvi_clause": 65.1,
+      "ac1_clause": 0.33
+    },
+    {
+      "doc": "TraffAlex",
+      "group": "tweets",
+      "sentences": 153,
+      "npvi_sent": 82.8,
+      "ac1_sent": 0.1,
+      "clause_words": 4.7,
+      "npvi_clause": 75.4,
+      "ac1_clause": 0.02
+    },
+    {
+      "doc": "VictorTaelin",
+      "group": "tweets",
+      "sentences": 280,
+      "npvi_sent": 70.0,
+      "ac1_sent": 0.06,
+      "clause_words": 5.9,
+      "npvi_clause": 77.9,
+      "ac1_clause": 0.09
+    },
+    {
+      "doc": "WillManidis",
+      "group": "tweets",
+      "sentences": 216,
+      "npvi_sent": 70.2,
+      "ac1_sent": 0.05,
+      "clause_words": 10.5,
+      "npvi_clause": 68.7,
+      "ac1_clause": 0.17
+    },
+    {
+      "doc": "_avichawla",
+      "group": "tweets",
+      "sentences": 134,
+      "npvi_sent": 58.8,
+      "ac1_sent": -0.18,
+      "clause_words": 7.6,
+      "npvi_clause": 70.0,
+      "ac1_clause": 0.06
+    },
+    {
+      "doc": "aijoey",
+      "group": "tweets",
+      "sentences": 182,
+      "npvi_sent": 71.2,
+      "ac1_sent": -0.0,
+      "clause_words": 6.7,
+      "npvi_clause": 73.2,
+      "ac1_clause": 0.03
+    },
+    {
+      "doc": "analogalok",
+      "group": "tweets",
+      "sentences": 683,
+      "npvi_sent": 75.1,
+      "ac1_sent": 0.1,
+      "clause_words": 6.4,
+      "npvi_clause": 72.1,
+      "ac1_clause": 0.1
+    },
+    {
+      "doc": "bingxu_",
+      "group": "tweets",
+      "sentences": 139,
+      "npvi_sent": 57.2,
+      "ac1_sent": -0.11,
+      "clause_words": 7.8,
+      "npvi_clause": 70.9,
+      "ac1_clause": 0.07
+    },
+    {
+      "doc": "bryan_johnson",
+      "group": "tweets",
+      "sentences": 511,
+      "npvi_sent": 58.2,
+      "ac1_sent": 0.08,
+      "clause_words": 7.3,
+      "npvi_clause": 70.1,
+      "ac1_clause": 0.08
+    },
+    {
+      "doc": "davepl1968",
+      "group": "tweets",
+      "sentences": 274,
+      "npvi_sent": 68.0,
+      "ac1_sent": 0.06,
+      "clause_words": 6.3,
+      "npvi_clause": 74.2,
+      "ac1_clause": 0.08
+    },
+    {
+      "doc": "davidsenra",
+      "group": "tweets",
+      "sentences": 79,
+      "npvi_sent": 84.7,
+      "ac1_sent": -0.04,
+      "clause_words": 11.1,
+      "npvi_clause": 74.3,
+      "ac1_clause": 0.18
+    },
+    {
+      "doc": "dwarkesh_sp",
+      "group": "tweets",
+      "sentences": 97,
+      "npvi_sent": 61.7,
+      "ac1_sent": -0.12,
+      "clause_words": 7.8,
+      "npvi_clause": 83.6,
+      "ac1_clause": 0.18
+    },
+    {
+      "doc": "elder_plinius",
+      "group": "tweets",
+      "sentences": 130,
+      "npvi_sent": 77.1,
+      "ac1_sent": 0.04,
+      "clause_words": 5.8,
+      "npvi_clause": 74.8,
+      "ac1_clause": 0.07
+    },
+    {
+      "doc": "ishaansehgal",
+      "group": "tweets",
+      "sentences": 136,
+      "npvi_sent": 73.3,
+      "ac1_sent": 0.08,
+      "clause_words": 5.9,
+      "npvi_clause": 59.4,
+      "ac1_clause": 0.21
+    },
+    {
+      "doc": "ivanfioravanti",
+      "group": "tweets",
+      "sentences": 89,
+      "npvi_sent": 93.4,
+      "ac1_sent": -0.03,
+      "clause_words": 10.8,
+      "npvi_clause": 85.3,
+      "ac1_clause": -0.05
+    },
+    {
+      "doc": "justinskycak",
+      "group": "tweets",
+      "sentences": 101,
+      "npvi_sent": 68.9,
+      "ac1_sent": 0.01,
+      "clause_words": 9.3,
+      "npvi_clause": 79.2,
+      "ac1_clause": 0.02
+    },
+    {
+      "doc": "kunchenguid",
+      "group": "tweets",
+      "sentences": 64,
+      "npvi_sent": 92.5,
+      "ac1_sent": -0.08,
+      "clause_words": 13.8,
+      "npvi_clause": 76.3,
+      "ac1_clause": 0.16
+    },
+    {
+      "doc": "kwindla",
+      "group": "tweets",
+      "sentences": 119,
+      "npvi_sent": 63.3,
+      "ac1_sent": 0.04,
+      "clause_words": 7.9,
+      "npvi_clause": 75.8,
+      "ac1_clause": 0.12
+    },
+    {
+      "doc": "levelsio",
+      "group": "tweets",
+      "sentences": 54,
+      "npvi_sent": 82.4,
+      "ac1_sent": 0.36,
+      "clause_words": 12.2,
+      "npvi_clause": 85.9,
+      "ac1_clause": 0.04
+    },
+    {
+      "doc": "mitchellh",
+      "group": "tweets",
+      "sentences": 235,
+      "npvi_sent": 69.9,
+      "ac1_sent": -0.02,
+      "clause_words": 8.0,
+      "npvi_clause": 81.9,
+      "ac1_clause": 0.0
+    },
+    {
+      "doc": "mksglu",
+      "group": "tweets",
+      "sentences": 230,
+      "npvi_sent": 75.9,
+      "ac1_sent": 0.02,
+      "clause_words": 5.1,
+      "npvi_clause": 67.7,
+      "ac1_clause": 0.15
+    },
+    {
+      "doc": "natolambert",
+      "group": "tweets",
+      "sentences": 135,
+      "npvi_sent": 52.9,
+      "ac1_sent": 0.14,
+      "clause_words": 8.5,
+      "npvi_clause": 80.9,
+      "ac1_clause": 0.12
+    },
+    {
+      "doc": "ollobrains",
+      "group": "tweets",
+      "sentences": 163,
+      "npvi_sent": 64.9,
+      "ac1_sent": 0.23,
+      "clause_words": 7.7,
+      "npvi_clause": 70.3,
+      "ac1_clause": 0.17
+    },
+    {
+      "doc": "onusoz",
+      "group": "tweets",
+      "sentences": 230,
+      "npvi_sent": 77.3,
+      "ac1_sent": 0.07,
+      "clause_words": 11.4,
+      "npvi_clause": 72.7,
+      "ac1_clause": 0.09
+    },
+    {
+      "doc": "quasa0",
+      "group": "tweets",
+      "sentences": 156,
+      "npvi_sent": 75.5,
+      "ac1_sent": 0.13,
+      "clause_words": 7.3,
+      "npvi_clause": 66.5,
+      "ac1_clause": 0.13
+    },
+    {
+      "doc": "saranormous",
+      "group": "tweets",
+      "sentences": 126,
+      "npvi_sent": 76.3,
+      "ac1_sent": -0.22,
+      "clause_words": 8.2,
+      "npvi_clause": 58.9,
+      "ac1_clause": 0.18
+    },
+    {
+      "doc": "stevibe",
+      "group": "tweets",
+      "sentences": 189,
+      "npvi_sent": 79.8,
+      "ac1_sent": -0.03,
+      "clause_words": 5.1,
+      "npvi_clause": 69.5,
+      "ac1_clause": 0.12
+    },
+    {
+      "doc": "sudoingX",
+      "group": "tweets",
+      "sentences": 442,
+      "npvi_sent": 67.9,
+      "ac1_sent": 0.09,
+      "clause_words": 6.4,
+      "npvi_clause": 68.1,
+      "ac1_clause": 0.11
+    },
+    {
+      "doc": "tbpn",
+      "group": "tweets",
+      "sentences": 110,
+      "npvi_sent": 70.6,
+      "ac1_sent": 0.24,
+      "clause_words": 8.7,
+      "npvi_clause": 78.6,
+      "ac1_clause": 0.13
+    },
+    {
+      "doc": "teortaxesTex",
+      "group": "tweets",
+      "sentences": 146,
+      "npvi_sent": 75.5,
+      "ac1_sent": -0.12,
+      "clause_words": 7.6,
+      "npvi_clause": 86.3,
+      "ac1_clause": -0.04
+    },
+    {
+      "doc": "trq212",
+      "group": "tweets",
+      "sentences": 106,
+      "npvi_sent": 55.0,
+      "ac1_sent": 0.09,
+      "clause_words": 9.3,
+      "npvi_clause": 77.5,
+      "ac1_clause": -0.0
+    },
+    {
+      "doc": "unclebobmartin",
+      "group": "tweets",
+      "sentences": 212,
+      "npvi_sent": 65.0,
+      "ac1_sent": 0.15,
+      "clause_words": 6.2,
+      "npvi_clause": 64.7,
+      "ac1_clause": 0.3
+    },
+    {
+      "doc": "vllm_project",
+      "group": "tweets",
+      "sentences": 104,
+      "npvi_sent": 79.9,
+      "ac1_sent": -0.05,
+      "clause_words": 5.7,
+      "npvi_clause": 70.0,
+      "ac1_clause": 0.15
+    },
+    {
+      "doc": "willdepue",
+      "group": "tweets",
+      "sentences": 114,
+      "npvi_sent": 56.0,
+      "ac1_sent": -0.11,
+      "clause_words": 7.5,
+      "npvi_clause": 76.9,
+      "ac1_clause": 0.11
+    },
+    {
+      "doc": "this-post",
+      "group": "self",
+      "sentences": 149,
+      "npvi_sent": 62.8,
+      "ac1_sent": 0.0,
+      "clause_words": 7.4,
+      "npvi_clause": 64.2,
+      "ac1_clause": 0.24
+    }
+  ]
+}
