@@ -271,7 +271,6 @@ def fig4():
     lex = json.loads((root / "results_lexical.json").read_text())["docs"]
     labels = json.loads((root / "figures" / "data.json").read_text())["docs"]
     label_of = {d["doc"]: d["label"] for d in labels}
-    TW_COLOR = "#475569"
     SELF_COLOR = "#16a34a"
 
     fig, ax = plt.subplots(figsize=(8.0, 5.6))
@@ -290,10 +289,11 @@ def fig4():
 
     from adjustText import adjust_text
     texts = []
+    # tweets stay out of this chart: the post introduces them later,
+    # and this figure appears before that introduction
     for d in lex:
         x, y = d["zipf_mean"], d["mtld"]
         if d["group"] == "tweets":
-            ax.scatter(x, y, s=26, color=TW_COLOR, alpha=0.35, zorder=2, linewidths=0)
             continue
         if d["group"] == "self":
             ax.scatter(x, y, s=72, color=SELF_COLOR, zorder=4, marker="D",
@@ -317,8 +317,6 @@ def fig4():
     handles = [
         plt.Line2D([], [], marker="o", linestyle="", color=AI_COLOR, label="AI-flavored pages"),
         plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, label="Human baselines (pre-LLM)"),
-        plt.Line2D([], [], marker="o", linestyle="", color=TW_COLOR, alpha=0.35,
-                   label="Tweet samples (no ground truth)"),
         plt.Line2D([], [], marker="D", linestyle="", color=SELF_COLOR, label="This post"),
     ]
     ax.legend(handles=handles, loc="upper right", frameon=False, fontsize=8.5)

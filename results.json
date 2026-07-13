@@ -3587,12 +3587,12 @@
       "doc": "this-post",
       "group": "self",
       "words": 4426,
-      "sentences": 185,
-      "mean_sentence_len": 23.9,
-      "stdev_sentence_len": 17.8,
-      "cv_sentence_len": 0.74,
+      "sentences": 186,
+      "mean_sentence_len": 23.8,
+      "stdev_sentence_len": 17.3,
+      "cv_sentence_len": 0.72,
       "frag_pct": 0.5,
-      "long_pct": 17.8,
+      "long_pct": 17.7,
       "em_dash_per_1k": 0.0,
       "semicolon_per_1k": 1.4,
       "colon_per_1k": 2.0,
@@ -3615,7 +3615,7 @@
         ],
         [
           "it",
-          8
+          9
         ],
         [
           "<img",
@@ -3635,7 +3635,7 @@
         "5": 26,
         "10": 34,
         "15": 31,
-        "20": 21,
+        "20": 22,
         "25": 25,
         "30": 14,
         "35": 11,
