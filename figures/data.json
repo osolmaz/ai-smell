@@ -909,9 +909,9 @@
    "labeled_bullet_pct_of_bullets": 0.0,
    "first_person_per_1k": 8.7,
    "frag_pct": 1.0,
-   "ttr_280": 0.6,
-   "words": 4578,
-   "mtld": 100.8,
+   "ttr_280": 0.593,
+   "words": 4585,
+   "mtld": 98.7,
    "zipf_mean": 5.49,
    "flow": 0.565
   }

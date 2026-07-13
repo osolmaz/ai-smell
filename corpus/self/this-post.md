@@ -1,5 +1,5 @@
 
-*Note: this post is fully AI generated. It was written interactively, in a back and forth with an agent, under the very [kill-ai-smell](https://github.com/osolmaz/tools/blob/main/agents/skills/kill-ai-smell/SKILL.md) skill it describes, as a demonstration of that skill.*
+*Note: this post is fully AI generated, written by Claude Fable 5 through Cursor. It was written interactively, in a back and forth with an agent, under the very [kill-ai-smell](https://github.com/osolmaz/tools/blob/main/agents/skills/kill-ai-smell/SKILL.md) skill it describes, as a demonstration of that skill.*
 
 Everyone knows the feeling by now. You open a page, read two paragraphs, and something tells you a model wrote it. The tells have become cultural shorthand, with the em dash as the poster child, but most of the discourse stays at the level of vibes. I wanted to know whether the feeling corresponds to anything you can measure, so my agent and I ran a small stylometric study, and the answer turned out to be a clear yes. A handful of surface metrics, all computable with regular expressions and a sentence splitter, separate generated copy from human writing by an order of magnitude, in several cases with no overlap between the groups at all.
 
