@@ -197,7 +197,7 @@
       "group": "ai",
       "sentences": 55,
       "mean_run": 5.7,
-      "flow": 0.231,
+      "flow": 0.23,
       "spines": [
         10,
         10,
@@ -573,7 +573,7 @@
       "group": "human",
       "sentences": 96,
       "mean_run": 11.1,
-      "flow": 0.517,
+      "flow": 0.516,
       "spines": [
         11,
         7,
@@ -834,7 +834,7 @@
       "group": "human",
       "sentences": 38,
       "mean_run": 13.4,
-      "flow": 0.643,
+      "flow": 0.642,
       "spines": [
         9,
         8,
@@ -881,7 +881,7 @@
       "group": "human",
       "sentences": 19,
       "mean_run": 11.5,
-      "flow": 0.503,
+      "flow": 0.502,
       "spines": [
         9,
         11,
@@ -1495,7 +1495,7 @@
       "group": "tweets",
       "sentences": 129,
       "mean_run": 13.7,
-      "flow": 0.642,
+      "flow": 0.641,
       "spines": [
         10,
         12,
@@ -3049,7 +3049,7 @@
       "group": "tweets",
       "sentences": 280,
       "mean_run": 9.3,
-      "flow": 0.438,
+      "flow": 0.437,
       "spines": [
         6,
         8,
@@ -7289,7 +7289,7 @@
       "group": "tweets",
       "sentences": 230,
       "mean_run": 16.8,
-      "flow": 0.669,
+      "flow": 0.668,
       "spines": [
         16,
         31,
@@ -9321,9 +9321,9 @@
     {
       "doc": "this-post",
       "group": "self",
-      "sentences": 186,
+      "sentences": 195,
       "mean_run": 11.7,
-      "flow": 0.562,
+      "flow": 0.565,
       "spines": [
         6,
         12,
@@ -9501,6 +9501,15 @@
         10,
         9,
         12,
+        14,
+        20,
+        4,
+        21,
+        12,
+        11,
+        18,
+        5,
+        15,
         10,
         4,
         12,

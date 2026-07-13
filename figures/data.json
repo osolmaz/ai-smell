@@ -73,7 +73,7 @@
    "words": 493,
    "mtld": 187.3,
    "zipf_mean": 4.86,
-   "flow": 0.231
+   "flow": 0.23
   },
   {
    "doc": "goplaces",
@@ -178,7 +178,7 @@
    "words": 1486,
    "mtld": 86.6,
    "zipf_mean": 5.88,
-   "flow": 0.517
+   "flow": 0.516
   },
   {
    "doc": "jvns-brag-documents-2019",
@@ -223,7 +223,7 @@
    "words": 932,
    "mtld": 68.3,
    "zipf_mean": 5.54,
-   "flow": 0.643
+   "flow": 0.642
   },
   {
    "doc": "requests-2017",
@@ -238,7 +238,7 @@
    "words": 326,
    "mtld": 146.1,
    "zipf_mean": 5.39,
-   "flow": 0.503
+   "flow": 0.502
   },
   {
    "doc": "ripgrep-2016",
@@ -298,7 +298,7 @@
    "words": 2727,
    "mtld": 98.4,
    "zipf_mean": 5.84,
-   "flow": 0.642
+   "flow": 0.641
   },
   {
    "doc": "GergelyOrosz",
@@ -433,7 +433,7 @@
    "words": 4819,
    "mtld": 116.3,
    "zipf_mean": 5.68,
-   "flow": 0.438
+   "flow": 0.437
   },
   {
    "doc": "WillManidis",
@@ -748,7 +748,7 @@
    "words": 7353,
    "mtld": 107.2,
    "zipf_mean": 5.74,
-   "flow": 0.669
+   "flow": 0.668
   },
   {
    "doc": "quasa0",
@@ -905,15 +905,15 @@
    "group": "self",
    "label": "this post",
    "em_dash_per_1k": 0.0,
-   "triads_per_1k": 0.45,
+   "triads_per_1k": 0.44,
    "labeled_bullet_pct_of_bullets": 0.0,
-   "first_person_per_1k": 7.9,
-   "frag_pct": 0.5,
+   "first_person_per_1k": 8.7,
+   "frag_pct": 1.0,
    "ttr_280": 0.6,
-   "words": 4426,
-   "mtld": 98.5,
-   "zipf_mean": 5.48,
-   "flow": 0.562
+   "words": 4578,
+   "mtld": 100.8,
+   "zipf_mean": 5.49,
+   "flow": 0.565
   }
  ],
  "flow_examples": [

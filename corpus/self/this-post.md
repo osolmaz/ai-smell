@@ -149,6 +149,12 @@ The most instructive moment of the project happened while writing it up. My agen
 
 Feel free to steal the skill, and if you run the metrics on a corpus of your own, I would love to see the numbers.
 
+## A plea
+
+I realize I am doing slop vendors a favor by putting this out there. The tells are enumerated and scripted now, and anyone who wants their generated copy to pass can point a model at this post and patch the fingerprints. I accept that trade. What I can't bear is actually legit people using AI to write their long-forms and publishing the model's house style untouched, and I'd rather have everyone, slop vendors included, stop using patterns like "It's not X. It's Y." and the triads than have to read them ever again.
+
+I also know there is a brain behind those AI-generated posts. Somebody lived the experience worth posting about, formed the opinion, and then let a model flatten it into the same shapes as every other post in the feed. This favor is for them. The de-smeller is there so they can keep using the machine without shipping its defaults.
+
 ## Appendix: the corpus
 
 Every text is archived as measured in the [ai-smell repository](https://github.com/osolmaz/ai-smell), which is the maintained home of the study. It holds the corpus, the analysis scripts, the raw results, and the figures. The AI pages were captured from the live sites in July 2026, with code blocks still in place (the script strips them before counting).
