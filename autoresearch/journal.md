@@ -70,3 +70,26 @@ before a clause can run that long. Pure sentence length fails as a tell
 long *unbroken* stretch inside the sentence. The tell is the absence of
 flow, and it is continuous, sequence-based, and robust across its
 parameterization on this corpus.
+
+## Generation 6: removing the constants (sweep2.py, feature_relative.py)
+
+Question: does the tell survive without the 10-and-15-word ramp?
+
+- Rank flow (mean pooled-CDF percentile of each sentence's spine, no
+  constants): +17%, loo 18/18. The empirical CDF works as a
+  data-derived ramp, at a third of the margin.
+- Consecutive rank flow (product kernel over adjacent pairs,
+  feature_relative.py): +35%, loo 18/18. Requiring two flowing
+  sentences in a row doubles the constant-free margin; the min kernel
+  gives +12.7%.
+- Every level-free order statistic fails: von Neumann ratio on lengths
+  (auc 0.76) and spines (0.69), turning-point ratio (0.79),
+  permutation-normalized adjacent difference (0.89), Spearman lag-1
+  (0.88), adjacent min/max ratios (0.86, 0.80), rank nPVI on spines
+  (0.51). Within-sentence relative forms (spine minus median clause,
+  spine over median) also fail (0.86, 0.68).
+
+Conclusion: the sequence order alone does not carry the tell; the level
+of the longest clause does, and the order adds margin on top of it.
+The constant-free hierarchy is 17% (level via ranks), 35% (level plus
+consecutiveness), 55% (hand-ramped level, feature.py).
