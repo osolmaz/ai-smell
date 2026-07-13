@@ -12,7 +12,8 @@
    "ttr_280": 0.589,
    "words": 636,
    "mtld": 146.3,
-   "zipf_mean": 5.02
+   "zipf_mean": 5.02,
+   "flow": 0.411
   },
   {
    "doc": "crabbox",
@@ -26,7 +27,8 @@
    "ttr_280": 0.639,
    "words": 985,
    "mtld": 135.1,
-   "zipf_mean": 5.06
+   "zipf_mean": 5.06,
+   "flow": 0.409
   },
   {
    "doc": "fs-safe",
@@ -40,7 +42,8 @@
    "ttr_280": 0.636,
    "words": 545,
    "mtld": 195.4,
-   "zipf_mean": 5.08
+   "zipf_mean": 5.08,
+   "flow": 0.325
   },
   {
    "doc": "gitcrawl",
@@ -54,7 +57,8 @@
    "ttr_280": 0.611,
    "words": 285,
    "mtld": 137.0,
-   "zipf_mean": 5.13
+   "zipf_mean": 5.13,
+   "flow": 0.366
   },
   {
    "doc": "gogcli",
@@ -68,7 +72,8 @@
    "ttr_280": 0.614,
    "words": 493,
    "mtld": 187.3,
-   "zipf_mean": 4.86
+   "zipf_mean": 4.86,
+   "flow": 0.231
   },
   {
    "doc": "goplaces",
@@ -82,7 +87,8 @@
    "ttr_280": 0.636,
    "words": 349,
    "mtld": 111.6,
-   "zipf_mean": 5.09
+   "zipf_mean": 5.09,
+   "flow": 0.191
   },
   {
    "doc": "imsg",
@@ -96,7 +102,8 @@
    "ttr_280": 0.693,
    "words": 338,
    "mtld": 228.6,
-   "zipf_mean": 4.96
+   "zipf_mean": 4.96,
+   "flow": 0.238
   },
   {
    "doc": "mcporter",
@@ -110,7 +117,8 @@
    "ttr_280": 0.632,
    "words": 479,
    "mtld": 160.7,
-   "zipf_mean": 4.94
+   "zipf_mean": 4.94,
+   "flow": 0.348
   },
   {
    "doc": "spogo",
@@ -124,7 +132,8 @@
    "ttr_280": 0.589,
    "words": 303,
    "mtld": 120.2,
-   "zipf_mean": 5.3
+   "zipf_mean": 5.3,
+   "flow": 0.218
   },
   {
    "doc": "wacli",
@@ -138,7 +147,8 @@
    "ttr_280": 0.596,
    "words": 440,
    "mtld": 158.1,
-   "zipf_mean": 5.09
+   "zipf_mean": 5.09,
+   "flow": 0.243
   },
   {
    "doc": "antirez-terminology",
@@ -152,7 +162,8 @@
    "ttr_280": 0.539,
    "words": 1061,
    "mtld": 95.7,
-   "zipf_mean": 5.99
+   "zipf_mean": 5.99,
+   "flow": 0.637
   },
   {
    "doc": "joel-rewrite",
@@ -166,7 +177,8 @@
    "ttr_280": 0.586,
    "words": 1486,
    "mtld": 86.6,
-   "zipf_mean": 5.88
+   "zipf_mean": 5.88,
+   "flow": 0.517
   },
   {
    "doc": "jvns-brag-documents-2019",
@@ -180,7 +192,8 @@
    "ttr_280": 0.607,
    "words": 1780,
    "mtld": 105.8,
-   "zipf_mean": 5.98
+   "zipf_mean": 5.98,
+   "flow": 0.732
   },
   {
    "doc": "makers-schedule-2009",
@@ -194,7 +207,8 @@
    "ttr_280": 0.529,
    "words": 1113,
    "mtld": 89.2,
-   "zipf_mean": 5.91
+   "zipf_mean": 5.91,
+   "flow": 0.544
   },
   {
    "doc": "redis-2016",
@@ -208,7 +222,8 @@
    "ttr_280": 0.539,
    "words": 932,
    "mtld": 68.3,
-   "zipf_mean": 5.54
+   "zipf_mean": 5.54,
+   "flow": 0.643
   },
   {
    "doc": "requests-2017",
@@ -222,7 +237,8 @@
    "ttr_280": 0.668,
    "words": 326,
    "mtld": 146.1,
-   "zipf_mean": 5.39
+   "zipf_mean": 5.39,
+   "flow": 0.503
   },
   {
    "doc": "ripgrep-2016",
@@ -236,7 +252,8 @@
    "ttr_280": 0.575,
    "words": 1695,
    "mtld": 85.2,
-   "zipf_mean": 5.28
+   "zipf_mean": 5.28,
+   "flow": 0.487
   },
   {
    "doc": "sqlite-testing",
@@ -250,7 +267,8 @@
    "ttr_280": 0.532,
    "words": 6924,
    "mtld": 65.8,
-   "zipf_mean": 5.53
+   "zipf_mean": 5.53,
+   "flow": 0.664
   },
   {
    "doc": "ClementDelangue",
@@ -264,7 +282,8 @@
    "ttr_280": 0.682,
    "words": 2403,
    "mtld": 140.2,
-   "zipf_mean": 5.58
+   "zipf_mean": 5.58,
+   "flow": 0.518
   },
   {
    "doc": "ESYudkowsky",
@@ -278,7 +297,8 @@
    "ttr_280": 0.532,
    "words": 2727,
    "mtld": 98.4,
-   "zipf_mean": 5.84
+   "zipf_mean": 5.84,
+   "flow": 0.642
   },
   {
    "doc": "GergelyOrosz",
@@ -292,7 +312,8 @@
    "ttr_280": 0.707,
    "words": 2431,
    "mtld": 167.5,
-   "zipf_mean": 5.56
+   "zipf_mean": 5.56,
+   "flow": 0.569
   },
   {
    "doc": "Pragmatic_Eng",
@@ -306,7 +327,8 @@
    "ttr_280": 0.564,
    "words": 2164,
    "mtld": 70.9,
-   "zipf_mean": 6.0
+   "zipf_mean": 6.0,
+   "flow": 0.546
   },
   {
    "doc": "Rafa_Schwinger",
@@ -320,7 +342,8 @@
    "ttr_280": 0.646,
    "words": 4499,
    "mtld": 124.2,
-   "zipf_mean": 5.42
+   "zipf_mean": 5.42,
+   "flow": 0.704
   },
   {
    "doc": "SemiAnalysis_",
@@ -334,7 +357,8 @@
    "ttr_280": 0.632,
    "words": 2930,
    "mtld": 144.6,
-   "zipf_mean": 5.37
+   "zipf_mean": 5.37,
+   "flow": 0.613
   },
   {
    "doc": "SlimTradeyBaby",
@@ -348,7 +372,8 @@
    "ttr_280": 0.696,
    "words": 2465,
    "mtld": 145.9,
-   "zipf_mean": 5.58
+   "zipf_mean": 5.58,
+   "flow": 0.444
   },
   {
    "doc": "TheAhmadOsman",
@@ -362,7 +387,8 @@
    "ttr_280": 0.611,
    "words": 6283,
    "mtld": 85.0,
-   "zipf_mean": 4.98
+   "zipf_mean": 4.98,
+   "flow": 0.405
   },
   {
    "doc": "TheValueist",
@@ -376,7 +402,8 @@
    "ttr_280": 0.654,
    "words": 4662,
    "mtld": 154.8,
-   "zipf_mean": 4.96
+   "zipf_mean": 4.96,
+   "flow": 0.637
   },
   {
    "doc": "TraffAlex",
@@ -390,7 +417,8 @@
    "ttr_280": 0.661,
    "words": 5390,
    "mtld": 46.5,
-   "zipf_mean": 4.64
+   "zipf_mean": 4.64,
+   "flow": 0.327
   },
   {
    "doc": "VictorTaelin",
@@ -404,7 +432,8 @@
    "ttr_280": 0.7,
    "words": 4819,
    "mtld": 116.3,
-   "zipf_mean": 5.68
+   "zipf_mean": 5.68,
+   "flow": 0.438
   },
   {
    "doc": "WillManidis",
@@ -418,7 +447,8 @@
    "ttr_280": 0.568,
    "words": 4084,
    "mtld": 64.6,
-   "zipf_mean": 5.88
+   "zipf_mean": 5.88,
+   "flow": 0.575
   },
   {
    "doc": "_avichawla",
@@ -432,7 +462,8 @@
    "ttr_280": 0.604,
    "words": 2290,
    "mtld": 121.5,
-   "zipf_mean": 5.54
+   "zipf_mean": 5.54,
+   "flow": 0.53
   },
   {
    "doc": "aijoey",
@@ -446,7 +477,8 @@
    "ttr_280": 0.65,
    "words": 2698,
    "mtld": 181.2,
-   "zipf_mean": 5.37
+   "zipf_mean": 5.37,
+   "flow": 0.446
   },
   {
    "doc": "analogalok",
@@ -460,7 +492,8 @@
    "ttr_280": 0.629,
    "words": 9952,
    "mtld": 139.7,
-   "zipf_mean": 5.2
+   "zipf_mean": 5.2,
+   "flow": 0.414
   },
   {
    "doc": "bingxu_",
@@ -474,7 +507,8 @@
    "ttr_280": 0.668,
    "words": 2497,
    "mtld": 133.2,
-   "zipf_mean": 5.66
+   "zipf_mean": 5.66,
+   "flow": 0.558
   },
   {
    "doc": "bryan_johnson",
@@ -488,7 +522,8 @@
    "ttr_280": 0.664,
    "words": 7403,
    "mtld": 133.6,
-   "zipf_mean": 5.63
+   "zipf_mean": 5.63,
+   "flow": 0.479
   },
   {
    "doc": "davepl1968",
@@ -502,7 +537,8 @@
    "ttr_280": 0.689,
    "words": 3915,
    "mtld": 131.6,
-   "zipf_mean": 5.8
+   "zipf_mean": 5.8,
+   "flow": 0.442
   },
   {
    "doc": "davidsenra",
@@ -516,7 +552,8 @@
    "ttr_280": 0.586,
    "words": 2029,
    "mtld": 89.4,
-   "zipf_mean": 5.9
+   "zipf_mean": 5.9,
+   "flow": 0.555
   },
   {
    "doc": "dwarkesh_sp",
@@ -530,7 +567,8 @@
    "ttr_280": 0.668,
    "words": 2023,
    "mtld": 152.0,
-   "zipf_mean": 5.64
+   "zipf_mean": 5.64,
+   "flow": 0.622
   },
   {
    "doc": "elder_plinius",
@@ -544,7 +582,8 @@
    "ttr_280": 0.732,
    "words": 2276,
    "mtld": 195.2,
-   "zipf_mean": 5.28
+   "zipf_mean": 5.28,
+   "flow": 0.422
   },
   {
    "doc": "ishaansehgal",
@@ -558,7 +597,8 @@
    "ttr_280": 0.568,
    "words": 2017,
    "mtld": 72.6,
-   "zipf_mean": 5.72
+   "zipf_mean": 5.72,
+   "flow": 0.4
   },
   {
    "doc": "ivanfioravanti",
@@ -572,7 +612,8 @@
    "ttr_280": 0.643,
    "words": 2460,
    "mtld": 40.0,
-   "zipf_mean": 5.24
+   "zipf_mean": 5.24,
+   "flow": 0.524
   },
   {
    "doc": "justinskycak",
@@ -586,7 +627,8 @@
    "ttr_280": 0.625,
    "words": 2465,
    "mtld": 94.4,
-   "zipf_mean": 5.74
+   "zipf_mean": 5.74,
+   "flow": 0.666
   },
   {
    "doc": "kunchenguid",
@@ -600,7 +642,8 @@
    "ttr_280": 0.643,
    "words": 2638,
    "mtld": 120.4,
-   "zipf_mean": 5.75
+   "zipf_mean": 5.75,
+   "flow": 0.733
   },
   {
    "doc": "kwindla",
@@ -614,7 +657,8 @@
    "ttr_280": 0.596,
    "words": 2321,
    "mtld": 120.2,
-   "zipf_mean": 5.6
+   "zipf_mean": 5.6,
+   "flow": 0.566
   },
   {
    "doc": "levelsio",
@@ -628,7 +672,8 @@
    "ttr_280": 0.621,
    "words": 4485,
    "mtld": 120.0,
-   "zipf_mean": 5.75
+   "zipf_mean": 5.75,
+   "flow": 0.795
   },
   {
    "doc": "mitchellh",
@@ -642,7 +687,8 @@
    "ttr_280": 0.589,
    "words": 3455,
    "mtld": 111.9,
-   "zipf_mean": 5.75
+   "zipf_mean": 5.75,
+   "flow": 0.502
   },
   {
    "doc": "mksglu",
@@ -656,7 +702,8 @@
    "ttr_280": 0.693,
    "words": 2305,
    "mtld": 238.8,
-   "zipf_mean": 5.05
+   "zipf_mean": 5.05,
+   "flow": 0.269
   },
   {
    "doc": "natolambert",
@@ -670,7 +717,8 @@
    "ttr_280": 0.65,
    "words": 3042,
    "mtld": 111.2,
-   "zipf_mean": 5.73
+   "zipf_mean": 5.73,
+   "flow": 0.692
   },
   {
    "doc": "ollobrains",
@@ -684,7 +732,8 @@
    "ttr_280": 0.607,
    "words": 3595,
    "mtld": 99.5,
-   "zipf_mean": 5.21
+   "zipf_mean": 5.21,
+   "flow": 0.532
   },
   {
    "doc": "onusoz",
@@ -698,7 +747,8 @@
    "ttr_280": 0.639,
    "words": 7353,
    "mtld": 107.2,
-   "zipf_mean": 5.74
+   "zipf_mean": 5.74,
+   "flow": 0.669
   },
   {
    "doc": "quasa0",
@@ -712,7 +762,8 @@
    "ttr_280": 0.554,
    "words": 2163,
    "mtld": 92.9,
-   "zipf_mean": 5.87
+   "zipf_mean": 5.87,
+   "flow": 0.426
   },
   {
    "doc": "saranormous",
@@ -726,7 +777,8 @@
    "ttr_280": 0.664,
    "words": 2640,
    "mtld": 97.0,
-   "zipf_mean": 5.84
+   "zipf_mean": 5.84,
+   "flow": 0.545
   },
   {
    "doc": "stevibe",
@@ -740,7 +792,8 @@
    "ttr_280": 0.65,
    "words": 2974,
    "mtld": 95.2,
-   "zipf_mean": 5.36
+   "zipf_mean": 5.36,
+   "flow": 0.362
   },
   {
    "doc": "sudoingX",
@@ -754,7 +807,8 @@
    "ttr_280": 0.625,
    "words": 6295,
    "mtld": 113.8,
-   "zipf_mean": 5.7
+   "zipf_mean": 5.7,
+   "flow": 0.432
   },
   {
    "doc": "tbpn",
@@ -768,7 +822,8 @@
    "ttr_280": 0.618,
    "words": 3001,
    "mtld": 97.8,
-   "zipf_mean": 5.8
+   "zipf_mean": 5.8,
+   "flow": 0.604
   },
   {
    "doc": "teortaxesTex",
@@ -782,7 +837,8 @@
    "ttr_280": 0.686,
    "words": 2453,
    "mtld": 170.3,
-   "zipf_mean": 5.52
+   "zipf_mean": 5.52,
+   "flow": 0.499
   },
   {
    "doc": "trq212",
@@ -796,7 +852,8 @@
    "ttr_280": 0.596,
    "words": 2225,
    "mtld": 83.9,
-   "zipf_mean": 5.8
+   "zipf_mean": 5.8,
+   "flow": 0.652
   },
   {
    "doc": "unclebobmartin",
@@ -810,7 +867,8 @@
    "ttr_280": 0.571,
    "words": 3198,
    "mtld": 55.2,
-   "zipf_mean": 5.61
+   "zipf_mean": 5.61,
+   "flow": 0.479
   },
   {
    "doc": "vllm_project",
@@ -824,7 +882,8 @@
    "ttr_280": 0.721,
    "words": 2626,
    "mtld": 203.5,
-   "zipf_mean": 4.99
+   "zipf_mean": 4.99,
+   "flow": 0.487
   },
   {
    "doc": "willdepue",
@@ -838,21 +897,146 @@
    "ttr_280": 0.618,
    "words": 2890,
    "mtld": 156.7,
-   "zipf_mean": 5.65
+   "zipf_mean": 5.65,
+   "flow": 0.64
   },
   {
    "doc": "this-post",
    "group": "self",
    "label": "this post",
    "em_dash_per_1k": 0.0,
-   "triads_per_1k": 0.57,
+   "triads_per_1k": 0.46,
    "labeled_bullet_pct_of_bullets": 0.0,
-   "first_person_per_1k": 7.4,
-   "frag_pct": 0.0,
+   "first_person_per_1k": 8.1,
+   "frag_pct": 0.5,
    "ttr_280": 0.6,
-   "words": 3514,
-   "mtld": 99.9,
-   "zipf_mean": 5.47
+   "words": 4309,
+   "mtld": 97.1,
+   "zipf_mean": 5.49,
+   "flow": 0.557
   }
- ]
+ ],
+ "flow_examples": [
+  {
+   "doc": "antirez-terminology",
+   "label": "antirez 2018",
+   "group": "human",
+   "spines": [
+    4,
+    23,
+    11,
+    14,
+    12,
+    23,
+    12,
+    16,
+    11,
+    17,
+    12,
+    19,
+    15,
+    19,
+    23,
+    20,
+    14,
+    4,
+    7,
+    14,
+    8,
+    19,
+    10,
+    5,
+    12,
+    9,
+    11,
+    13,
+    13,
+    23,
+    17,
+    9,
+    28,
+    10,
+    8,
+    21,
+    7,
+    18,
+    6,
+    15,
+    8,
+    11,
+    10
+   ]
+  },
+  {
+   "doc": "crabbox",
+   "label": "crabbox.sh",
+   "group": "ai",
+   "spines": [
+    6,
+    15,
+    10,
+    7,
+    8,
+    5,
+    6,
+    5,
+    17,
+    6,
+    7,
+    3,
+    14,
+    3,
+    11,
+    7,
+    7,
+    9,
+    19,
+    7,
+    17,
+    12,
+    11,
+    17,
+    12,
+    6,
+    7,
+    9,
+    11,
+    5,
+    9,
+    10,
+    7,
+    10,
+    8,
+    12,
+    7,
+    9,
+    6,
+    9,
+    8,
+    7,
+    7,
+    9,
+    10,
+    8,
+    12,
+    6,
+    8,
+    5,
+    4,
+    3,
+    4,
+    3,
+    6,
+    9,
+    10,
+    15,
+    14
+   ]
+  }
+ ],
+ "flow_edges": {
+  "ai": 0.411,
+  "human": 0.487,
+  "threshold": 0.449
+ }
 }

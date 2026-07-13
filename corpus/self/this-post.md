@@ -35,6 +35,7 @@ The chart below shows every document against every metric, with the AI pages in 
 | Type-token ratio (first 280 words) | 0.59–0.69 | 0.53–0.67 |
 | MTLD lexical diversity | 112–229 | 66–146 |
 | Mean Zipf word frequency | 4.86–5.30 | 5.28–5.99 |
+| Sentence flow (mean run percentile) | 0.19–0.41 | 0.49–0.73 |
 
 </details>
 
@@ -86,6 +87,34 @@ Plotting the two structural metrics against each other shows how much margin the
 
 Eighteen documents make a demonstration rather than a validated classifier. The first version of this study used only essays and documentation as baselines, which left the objection that the metrics were separating registers rather than authors, so the corpus now includes three pre-LLM READMEs that sell tools the way the AI pages do. The structural gaps survived that control untouched, while two metrics that looked strong against essays alone, first person and lexical diversity, collapsed into register signals. That is the argument for keeping the baselines adversarial. The next escalation would be a large sample of post-LLM, human-written landing pages, but the sizes of the surviving gaps, three-fold at the closest edge and roughly twenty-fold on average with no overlap, make me confident the structural metrics would hold.
 
+## The flow of a sentence
+
+Everything above counts features one at a time. The last metric came out of a different question. Read the two corpora side by side and the sentences feel different in a way none of the counters capture, so I asked whether the rhythm of consecutive sentences could be measured too. I did not know what to count in advance, so we searched for it in the style of [karpathy/autoresearch](https://github.com/karpathy/autoresearch). A frozen harness feeds every document to a candidate scoring function as a bare sequence of per-sentence measurements and reports how cleanly the scores split the ten AI pages from the eight human baselines. The scoring function is the only file that changes between runs, and every attempt lands in a [journal](https://github.com/osolmaz/ai-smell/blob/main/autoresearch/journal.md) that now holds over fifty experiments, most of them failures.
+
+The failures narrowed the answer. Statistics of pure order, which measure how sentence lengths rise and fall while ignoring how large they are, all fell short of separating the groups, so the tell is not in the alternation. What survived is almost embarrassingly simple. Split each sentence at its punctuation marks and keep the longest piece, the longest run of words the sentence lets through without a pause. Human writers keep producing sentences that contain one long run, whatever their register. The AI pages break nearly every sentence before a run can develop.
+
+The first version that separated the corpus scored each sentence on a ramp between a 10-word run and a 15-word run, and it worked, but both constants were picked by hand. Ranking removes them. Give each sentence the fraction of all runs in the corpus that are shorter than its own, and average those percentiles over the document:
+
+$$ \mathrm{flow} = \frac{1}{n}\sum_{i=1}^{n} F(r_i) $$
+
+where $r_i$ is the longest run in sentence $i$ and $F$ is the distribution of runs pooled over the whole corpus. Statisticians will recognize the Mann-Whitney rank statistic. The flow score is the probability that a random sentence-run from the document outlasts a random run from the corpus, and it carries no tuned constants at all. We also tried a sliding-window generalization that multiplies the percentiles of consecutive sentences, and it looked stronger until we normalized the scale, at which point the gain vanished. That correction is in the journal too. The order of the sentences adds nothing; the length of the runs carries the whole signal.
+
+The raw material makes the tell visible before any formula does. The chart shows the longest run in each of the first sixty sentences of one human baseline and of crabbox.sh, one of the two AI pages nearest the human range. The human post keeps clearing ten words without a pause. The AI page almost never does.
+
+<img class="desmeller-fallback" src="/img/ai-de-smeller/flow-seq.svg" alt="Two bar-chart panels showing the longest unbroken run of words in each of the first sixty sentences, in document order, for the antirez blog post and the crabbox.sh landing page, with the human panel repeatedly clearing a dashed ten-word line that the AI panel rarely reaches">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-flow-seq" class="desmeller-chart" style="height:auto"></div>
+</div>
+
+Averaging the percentiles gives one number per document, and the groups separate completely. The AI pages score between 0.19 and 0.41, the human texts between 0.49 and 0.73, and refitting the threshold with any single document held out still classifies all eighteen. The margin is thinner than the detector's, since the strongest AI page comes within 17 percent of the flattest human baseline, the ripgrep README. This post scores 0.56, in the middle of the human range.
+
+<img class="desmeller-fallback" src="/img/ai-de-smeller/flow-scores.svg" alt="Horizontal bar chart of flow scores for all eighteen ground-truth documents plus this post, sorted ascending, with the ten AI pages below a dashed midpoint threshold and the eight human baselines and this post above it">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-flow-scores" class="desmeller-chart"></div>
+</div>
+
+Pointed at the tweet samples from the next section, the metric puts 13 of the 42 accounts below the midpoint threshold, and all three accounts that cross the labeled-bullet line there are among them. That agreement is worth pausing on, because the two measurements share nothing. One counts bullet shapes and the other reads clause lengths, yet they flag the same accounts. The reference implementation is [analyze_flow.py](https://github.com/osolmaz/ai-smell/blob/main/analyze_flow.py) in the study repository, and the search that produced it, including every dead end, is preserved in the [autoresearch directory](https://github.com/osolmaz/ai-smell/tree/main/autoresearch).
+
 ## Long-form tweets in the wild
 
 The corpora above have ground truth, which is what makes the thresholds checkable. The place people actually want a detector is the feed, where there is none, so as a last exercise we pointed the same counters at tweets. I keep a personal archive of tweets captured while browsing, about 27,000 at the time of writing, and from it we built one sample per account, made of every original long-form tweet (over 280 characters) in date order, for every account with at least 2,000 words of such text. That produced 42 accounts, my own included, and each sample is archived in the [ai-smell repository](https://github.com/osolmaz/ai-smell/tree/main/corpus/tweets) with a source link per tweet.
@@ -122,7 +151,7 @@ The corpus splits into four groups there:
 - [corpus/ai](https://github.com/osolmaz/ai-smell/tree/main/corpus/ai) holds the ten OpenClaw landing pages.
 - [corpus/human](https://github.com/osolmaz/ai-smell/tree/main/corpus/human) holds the eight pre-LLM baselines: the SQLite testing docs, essays by Joel Spolsky (2000), antirez (2018), Paul Graham (2009), and Julia Evans (2019), and the ripgrep, Redis, and Requests READMEs at their 2016–2017 git tags.
 - [corpus/tweets](https://github.com/osolmaz/ai-smell/tree/main/corpus/tweets) holds the 42 long-form tweet samples, one file per account, date-sorted, with a link back to each tweet.
-- [corpus/self](https://github.com/osolmaz/ai-smell/tree/main/corpus/self) holds this post itself, archived as measured, provably AI-written by its own disclaimer. Written under the kill-ai-smell skill, it clears the detector from the other side, with zero em dashes, exactly-three lists at a quarter of the threshold, and no labeled bullets. The tells are a default, not a fingerprint, and a model instructed against them stops producing them.
+- [corpus/self](https://github.com/osolmaz/ai-smell/tree/main/corpus/self) holds this post itself, archived as measured, provably AI-written by its own disclaimer. Written under the kill-ai-smell skill, it clears the detector from the other side, with zero em dashes, exactly-three lists at a sixth of the threshold, and no labeled bullets. The tells are a default, not a fingerprint, and a model instructed against them stops producing them.
 
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script defer src="/assets/js/ai-de-smeller.js"></script>

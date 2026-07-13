@@ -723,14 +723,14 @@
     {
       "doc": "this-post",
       "group": "self",
-      "words": 3424,
-      "mtld": 99.9,
-      "mean_word_len": 4.84,
-      "long_word_pct": 22.3,
-      "syllables_per_word": 1.56,
-      "fk_grade": 11.6,
-      "zipf_mean": 5.47,
-      "rare_word_pct": 4.6
+      "words": 4204,
+      "mtld": 97.1,
+      "mean_word_len": 4.87,
+      "long_word_pct": 23.0,
+      "syllables_per_word": 1.57,
+      "fk_grade": 11.8,
+      "zipf_mean": 5.49,
+      "rare_word_pct": 4.5
     }
   ]
 }

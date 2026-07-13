@@ -53,6 +53,7 @@ The table gives the range across documents in each group.
 | Fragment sentences (≤4 words) | 3.6–41.9% | 1.4–17.4% |
 | First person /1k | 0.0–2.1 | 0.0–50.9 |
 | Type-token ratio (first 280 words) | 0.59–0.69 | 0.53–0.67 |
+| Sentence flow (mean run percentile) | 0.19–0.41 | 0.49–0.73 |
 
 The triad and labeled-bullet gaps have no overlap between groups. The
 notorious AI vocabulary ("delve", "landscape") barely appears in either
@@ -130,6 +131,22 @@ Imperative slogans ("Pick your path", "Reuse what's warm") and wh-frames
 frame four times in a row ("I want to try it / wire up an agent / triage
 a busy repo").
 
+**9. Sentence flow separates the corpus without tuned constants.** Split
+each sentence at its punctuation and keep the longest piece, the longest
+run of words with no pause. Rank that run against every run in the pooled
+corpus and average the percentiles per document (`analyze_flow.py`). This
+is the Mann-Whitney rank statistic of the document's runs against the
+corpus, and it separates the groups completely: AI pages score 0.19 to
+0.41, human texts 0.49 to 0.73, with leave-one-out at 18/18. Human prose
+keeps producing sentences with one long unbroken run; the AI pages break
+nearly every sentence before a run develops. The metric came out of an
+autoresearch-style search (`autoresearch/`, about fifty logged
+experiments). The negative results matter as much: every statistic of
+pure order (alternation, turning points, autocorrelation) fails, and a
+sliding-window generalization that multiplies consecutive percentiles
+collapses back to the plain mean once its scale is normalized. The run
+lengths carry the whole signal.
+
 ## Long-form tweets in the wild
 
 A third corpus group (`corpus/tweets/`, built by `sample_tweets.py` from
@@ -176,7 +193,10 @@ covers finding 7, `analyze_headings.py` covers finding 8, and
 `analyze_lexical.py` (run via `uv run --with wordfreq python3
 analyze_lexical.py`) writes `results_lexical.json` with MTLD lexical
 diversity, word length, syllable, readability, and Zipf word-frequency
-metrics. `export_web_data.py` writes `figures/data.json`, the compact
+metrics. `analyze_flow.py` covers finding 9 and writes
+`results_flow.json`; the search that produced the metric, with its frozen
+harness, feature files, and experiment journal, is preserved under
+`autoresearch/`. `export_web_data.py` writes `figures/data.json`, the compact
 per-document dataset behind the blog post's interactive Chart.js
 figures, and `render_figures.py` renders the blog figures into
 `figures/` (it needs matplotlib and adjustText, for example via `uv run

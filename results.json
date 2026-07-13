@@ -3586,61 +3586,62 @@
     {
       "doc": "this-post",
       "group": "self",
-      "words": 3514,
-      "sentences": 152,
-      "mean_sentence_len": 23.1,
-      "stdev_sentence_len": 15.3,
-      "cv_sentence_len": 0.66,
-      "frag_pct": 0.0,
-      "long_pct": 17.8,
+      "words": 4309,
+      "sentences": 184,
+      "mean_sentence_len": 23.4,
+      "stdev_sentence_len": 16.5,
+      "cv_sentence_len": 0.7,
+      "frag_pct": 0.5,
+      "long_pct": 17.4,
       "em_dash_per_1k": 0.0,
       "semicolon_per_1k": 1.4,
-      "colon_per_1k": 2.3,
-      "bullet_line_pct": 6.0,
+      "colon_per_1k": 2.1,
+      "bullet_line_pct": 4.8,
       "labeled_bullets": 0,
       "labeled_bullet_pct_of_bullets": 0.0,
-      "headings_per_1k": 2.0,
-      "contrast_per_1k": 2.56,
+      "headings_per_1k": 1.9,
+      "contrast_per_1k": 2.09,
       "not_just_per_1k": 0.0,
-      "triads_per_1k": 0.57,
+      "triads_per_1k": 0.46,
       "long_lists_per_1k": 0.0,
       "no_anaphora": 0,
-      "first_person_per_1k": 7.4,
-      "second_person_per_1k": 4.0,
+      "first_person_per_1k": 8.1,
+      "second_person_per_1k": 3.2,
       "ttr_280": 0.6,
       "top_openers": [
         [
           "the",
-          43
+          57
         ],
         [
           "it",
           8
         ],
         [
-          "every",
-          5
+          "that",
+          6
+        ],
+        [
+          "<img",
+          6
         ],
         [
           "a",
-          4
-        ],
-        [
-          "that",
-          4
+          5
         ]
       ],
       "len_hist": {
-        "5": 19,
-        "10": 28,
-        "15": 29,
-        "20": 19,
-        "25": 22,
-        "30": 8,
-        "35": 10,
+        "0": 1,
+        "5": 26,
+        "10": 34,
+        "15": 31,
+        "20": 21,
+        "25": 25,
+        "30": 14,
+        "35": 11,
         "40": 5,
-        "45": 3,
-        "50": 9
+        "45": 4,
+        "50": 12
       }
     }
   ],

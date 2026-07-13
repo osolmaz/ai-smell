@@ -28,6 +28,8 @@ KEYS = ["em_dash_per_1k", "triads_per_1k", "labeled_bullet_pct_of_bullets",
 docs = json.loads((ROOT / "results.json").read_text())["docs"]
 lexical = {d["doc"]: d for d in
            json.loads((ROOT / "results_lexical.json").read_text())["docs"]}
+flow_data = json.loads((ROOT / "results_flow.json").read_text())
+flow = {d["doc"]: d for d in flow_data["docs"]}
 out = []
 for d in docs:
     label = LABELS.get(d["doc"], "@" + d["doc"] if d["group"] == "tweets" else d["doc"])
@@ -36,7 +38,20 @@ for d in docs:
     lex = lexical[d["doc"]]
     row["mtld"] = lex["mtld"]
     row["zipf_mean"] = lex["zipf_mean"]
+    row["flow"] = flow[d["doc"]]["flow"]
     out.append(row)
 
-(ROOT / "figures" / "data.json").write_text(json.dumps({"docs": out}, indent=1))
+# Raw per-sentence run sequences for the two documents the flow section
+# uses as its worked example, truncated to what the chart shows.
+flow_examples = [
+    {"doc": doc, "label": LABELS[doc], "group": group,
+     "spines": flow[doc]["spines"][:60]}
+    for doc, group in (("antirez-terminology", "human"), ("crabbox", "ai"))
+]
+
+(ROOT / "figures" / "data.json").write_text(json.dumps({
+    "docs": out,
+    "flow_examples": flow_examples,
+    "flow_edges": flow_data["edges"],
+}, indent=1))
 print(f"wrote {len(out)} docs to figures/data.json")

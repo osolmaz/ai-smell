@@ -328,8 +328,81 @@ def fig4():
     plt.close(fig)
 
 
+def fig5():
+    """Two-panel raw sequence view for the flow section: the longest
+    unbroken run per sentence, in document order, human vs AI."""
+    root = Path(__file__).resolve().parent
+    flow = {d["doc"]: d for d in
+            json.loads((root / "results_flow.json").read_text())["docs"]}
+
+    picks = [
+        ("antirez-terminology", HUMAN_COLOR, "antirez blog post (human, 2018)"),
+        ("crabbox", AI_COLOR, "crabbox.sh landing page (AI)"),
+    ]
+    fig, axes = plt.subplots(2, 1, figsize=(9.6, 5.4))
+    fig.patch.set_facecolor(BG)
+    for ax, (doc, color, title) in zip(axes, picks):
+        style_axis(ax)
+        sp = flow[doc]["spines"][:60]
+        ax.bar(range(len(sp)), sp, color=color, width=0.8)
+        ax.axhline(10, color=MUTED, linestyle="--", linewidth=1)
+        ax.set_ylim(0, 42)
+        ax.set_ylabel("longest run\n(words)", fontsize=8.5)
+        ax.set_title(f"{title}   flow = {flow[doc]['flow']:.2f}",
+                     fontsize=10, loc="left", color=TEXT)
+    axes[0].text(59, 11, "10 words", fontsize=8, color=MUTED, ha="right", va="bottom")
+    axes[1].set_xlabel("sentence number (first 60 sentences)", fontsize=9)
+    fig.suptitle("The longest unbroken run of words in each sentence, in order",
+                 fontsize=12.5, fontweight="bold", color=TEXT, x=0.06, ha="left")
+    fig.tight_layout(rect=(0, 0, 1, 0.95))
+    fig.savefig(OUT / "flow-seq.svg", facecolor=BG)
+    fig.savefig(OUT / "flow-seq.png", facecolor=BG, dpi=200)
+    plt.close(fig)
+
+
+def fig6():
+    """Flow score ranking for the ground-truth corpus plus this post."""
+    root = Path(__file__).resolve().parent
+    data = json.loads((root / "results_flow.json").read_text())
+    labels = json.loads((root / "figures" / "data.json").read_text())["docs"]
+    label_of = {d["doc"]: d["label"] for d in labels}
+    SELF_COLOR = "#16a34a"
+
+    rows = sorted((d["flow"], d["group"], d["doc"]) for d in data["docs"]
+                  if d["group"] in ("ai", "human", "self"))
+    colors = {"ai": AI_COLOR, "human": HUMAN_COLOR, "self": SELF_COLOR}
+
+    fig, ax = plt.subplots(figsize=(8.6, 5.8))
+    fig.patch.set_facecolor(BG)
+    style_axis(ax)
+    ys = range(len(rows))
+    ax.barh(list(ys), [r[0] for r in rows], height=0.62,
+            color=[colors[r[1]] for r in rows])
+    ax.set_yticks(list(ys), [label_of.get(r[2], r[2]) for r in rows], fontsize=8)
+    thr = data["edges"]["threshold"]
+    ax.axvline(thr, color=MUTED, linestyle="--", linewidth=1)
+    ax.text(thr, len(rows) - 0.4, f"  midpoint threshold ({thr:.2f})",
+            fontsize=8, color=MUTED, va="top")
+    ax.set_xlabel("flow score (mean corpus percentile of sentence runs)",
+                  fontsize=9.5)
+    ax.set_title("Every AI page flows less than every human text",
+                 fontsize=13, fontweight="bold", loc="left", pad=10, color=TEXT)
+    handles = [
+        plt.Rectangle((0, 0), 1, 1, color=AI_COLOR, label="AI-flavored pages"),
+        plt.Rectangle((0, 0), 1, 1, color=HUMAN_COLOR, label="Human baselines (pre-LLM)"),
+        plt.Rectangle((0, 0), 1, 1, color=SELF_COLOR, label="This post"),
+    ]
+    ax.legend(handles=handles, loc="lower right", frameon=False, fontsize=8.5)
+    fig.tight_layout()
+    fig.savefig(OUT / "flow-scores.svg", facecolor=BG)
+    fig.savefig(OUT / "flow-scores.png", facecolor=BG, dpi=200)
+    plt.close(fig)
+
+
 fig1()
 fig2()
 fig3()
 fig4()
+fig5()
+fig6()
 print("written to", OUT)
