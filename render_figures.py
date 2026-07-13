@@ -278,6 +278,16 @@ def fig4():
     fig.patch.set_facecolor(BG)
     style_axis(ax)
 
+    # neither line separates alone (ripgrep crosses the frequency line,
+    # Requests crosses the diversity line); the pair does: every AI page
+    # sits in the top-left quadrant and no human text enters it
+    ax.axvline(5.35, color=MUTED, linestyle="--", linewidth=1)
+    ax.axhline(100, color=MUTED, linestyle="--", linewidth=1)
+    ax.text(5.36, 45, "word-frequency threshold (Zipf 5.35)", fontsize=8,
+            color=MUTED, rotation=90, va="bottom")
+    ax.text(4.62, 92, "diversity threshold (MTLD 100)", fontsize=8,
+            color=MUTED, ha="left")
+
     from adjustText import adjust_text
     texts = []
     for d in lex:

@@ -845,14 +845,14 @@
    "group": "self",
    "label": "this post",
    "em_dash_per_1k": 0.0,
-   "triads_per_1k": 0.58,
+   "triads_per_1k": 0.57,
    "labeled_bullet_pct_of_bullets": 0.0,
-   "first_person_per_1k": 7.5,
+   "first_person_per_1k": 7.4,
    "frag_pct": 0.0,
    "ttr_280": 0.6,
-   "words": 3454,
-   "mtld": 99.8,
-   "zipf_mean": 5.48
+   "words": 3514,
+   "mtld": 99.9,
+   "zipf_mean": 5.47
   }
  ]
 }
