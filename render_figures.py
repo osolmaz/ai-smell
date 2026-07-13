@@ -8,8 +8,9 @@ two metrics that each classify the whole corpus alone, with the detector
 thresholds drawn as dashed reference lines.
 
 Figure 3: scatter of the in-the-wild tweet samples (from results.json)
-on the same two axes as figure 2, with the same detector thresholds,
-so the wild samples are judged under identical conditions.
+on the same axes and limits as figure 2, with the ground-truth pages and
+baselines drawn faintly for reference, so the wild samples are judged
+under identical conditions and the plots superimpose.
 
 Solid light background baked in so the figures read on the blog's light
 and dark themes alike.
@@ -173,33 +174,47 @@ def fig3():
 
     ax.axvline(3, color=MUTED, linestyle="--", linewidth=1)
     ax.axhline(30, color=MUTED, linestyle="--", linewidth=1)
-    ax.text(3.08, 74, "triad threshold (3 / 1k)", fontsize=8, color=MUTED,
-            rotation=90, va="top")
-    ax.text(5.75, 31.5, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
+    ax.text(3.15, 55, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, rotation=90)
+    ax.text(16.9, 31.8, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
+
+    # ground-truth corpus, faint, for reference against figure 2
+    for label, group, _, x, y, *_ in ROWS:
+        color = AI_COLOR if group == "ai" else HUMAN_COLOR
+        ax.scatter(x, y, s=52, color=color, alpha=0.28, zorder=2, linewidths=0)
 
     labels = {
-        "aijoey": (0.1, 1.6), "sudoingX": (0.1, 1.6), "analogalok": (0.1, 1.6),
-        "trq212": (0.1, 1.6), "VictorTaelin": (0.1, 1.6), "TheAhmadOsman": (0.08, 1.6),
-        "ClementDelangue": (-0.08, 1.6), "unclebobmartin": (0.1, 1.6),
-        "bryan_johnson": (0.1, 1.6), "TheValueist": (-0.08, 1.6), "vllm_project": (0.08, 1.6),
+        "aijoey": (0.28, 1.4), "sudoingX": (0.28, 1.4), "analogalok": (0.28, -4.6),
+        "trq212": (0.28, 1.4), "VictorTaelin": (0.28, -5.2), "TheAhmadOsman": (0.24, 1.4),
+        "ClementDelangue": (-0.1, -6.2), "unclebobmartin": (-0.24, -1.6),
+        "bryan_johnson": (0.28, 1.4), "TheValueist": (0.28, 1.4), "vllm_project": (0.24, 1.4),
     }
     for r in tw:
         x, y = r["triads_per_1k"], r["labeled_bullet_pct_of_bullets"]
-        ax.scatter(x, y, s=52, color="#64748b", zorder=3, edgecolors="white", linewidths=0.8)
+        ax.scatter(x, y, s=52, color="#475569", zorder=3, edgecolors="white", linewidths=0.8)
         if r["doc"] in labels:
             dx, dy = labels[r["doc"]]
             ha = "right" if dx < 0 else "left"
             ax.text(x + dx, y + dy, "@" + r["doc"], fontsize=8, color=TEXT, ha=ha)
-    ax.text(0.06, -4.2, "31 accounts along the x axis, 10 of them at (0, 0)",
+    ax.text(0.15, -5.8, "31 accounts along the x axis, 10 of them at (0, 0)",
             fontsize=8, color=MUTED, ha="left", va="top")
 
-    ax.set_xlim(-0.25, 5.9)
-    ax.set_ylim(-9, 86)
+    ax.set_xlim(-0.7, 17.2)
+    ax.set_ylim(-11, 106)
     ax.set_xlabel("Exactly-three lists per 1,000 words", fontsize=10)
     ax.set_ylabel("Labeled bullets, % of all bullets", fontsize=10)
     ax.set_title("42 accounts' long-form tweets on the page detector's axes",
                  fontsize=13, fontweight="bold", loc="left", pad=10)
     ax.tick_params(labelsize=8.5)
+
+    handles = [
+        plt.Line2D([], [], marker="o", linestyle="", color="#475569",
+                   label="Tweet samples (no ground truth)"),
+        plt.Line2D([], [], marker="o", linestyle="", color=AI_COLOR, alpha=0.28,
+                   label="AI pages (reference)"),
+        plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, alpha=0.28,
+                   label="Human baselines (reference)"),
+    ]
+    ax.legend(handles=handles, loc="lower right", frameon=False, fontsize=9)
 
     fig.tight_layout()
     fig.savefig(OUT / "tweets.svg", facecolor=BG)
