@@ -728,8 +728,8 @@
    "triads_per_1k": 0.65,
    "labeled_bullet_pct_of_bullets": 0.0,
    "first_person_per_1k": 8.2,
-   "frag_pct": 0.8,
-   "ttr_280": 0.604,
+   "frag_pct": 0.0,
+   "ttr_280": 0.6,
    "words": 3066
   }
  ]
