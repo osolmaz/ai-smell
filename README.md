@@ -30,7 +30,9 @@ register matches the AI pages: ripgrep at 0.4.0 (2016), Redis at 3.2.0
 The main script (`analyze.py`) strips code blocks and inline code, then
 measures each document for punctuation rates (em dashes, semicolons,
 colons), sentence-length distribution and fragment share, bullet-line
-share and labeled bullets, contrast rhetoric, exactly-three lists,
+share and labeled bullets (a bullet that opens with a label of at most
+five words, then a period, colon, or dash, then elaboration, reported
+as a share of all bullets), contrast rhetoric, exactly-three lists,
 anaphora chains, first- and second-person rates, type-token ratio,
 sentence openers, and template phrases shared across the AI sites. Two
 follow-up scripts test claims from existing writing guidance.

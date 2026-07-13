@@ -40,7 +40,11 @@ The em-dash gap is the famous one, and it is real but weaker than its reputation
 
 Exactly-three lists ("A, B, and C") turn out to be the better punctuation-level tell. Every AI page produces them at least three times the rate of every human text, with no overlap anywhere: the most triad-prone human text, Joel's essay, still sits at a third of the most restrained AI page. Averaged over the corpora the gap is about nineteen-fold, and unlike the em dash, no AI page escapes it.
 
-The labeled bullet was the discovery of the study for me. It is the bullet shaped "Short label. One sentence of elaboration", or the same thing with a dash as separator. On the AI pages, roughly four of every five bullets have this shape, and on one page every single bullet does. In the human baselines the share never reaches one in eight, and five of the eight human texts never use it at all. If you have seen an AI-written landing page, you have seen walls of these, and it turns out the wall is more diagnostic than the punctuation.
+The labeled bullet was the discovery of the study for me. It is the bullet that opens with a short label, then a period, colon, or dash, then one sentence of elaboration. Here is a real one from mcporter.sh:
+
+> Typed clients. mcporter emit-ts emits `.d.ts` interfaces or a ready-to-run client wrapping `createServerProxy()` so agents call MCP tools with full TypeScript types.
+
+The metric is the share of a document's bullets that follow this shape. On the AI pages it is roughly four of every five, and on one page every single bullet does it. In the human baselines the share never reaches one in eight, and five of the eight human texts never use the shape at all; their bullets are plain items, like file names or flags, without the label-and-elaboration mold. If you have seen an AI-written landing page, you have seen walls of these, and it turns out the wall is more diagnostic than the punctuation.
 
 Fragment sentences, the verbless punches of four words or fewer, sit in between. Most AI pages run high, and the worst writes two of every five sentences that way, but the groups overlap: the deliberately punchy Requests README out-fragments three of the AI pages. Fragments corroborate rather than convict.
 
