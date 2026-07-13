@@ -8,8 +8,8 @@ two metrics that each classify the whole corpus alone, with the detector
 thresholds drawn as dashed reference lines.
 
 Figure 3: scatter of the in-the-wild tweet samples (from results.json)
-on the dash and triad axes, with the detector's triad threshold and the
-AI-page dash line for reference.
+on the same two axes as figure 2, with the same detector thresholds,
+so the wild samples are judged under identical conditions.
 
 Solid light background baked in so the figures read on the blog's light
 and dark themes alike.
@@ -171,32 +171,33 @@ def fig3():
     fig.patch.set_facecolor(BG)
     style_axis(ax)
 
-    ax.axvline(10, color=MUTED, linestyle="--", linewidth=1)
-    ax.axhline(3, color=MUTED, linestyle="--", linewidth=1)
-    ax.text(10.4, 5.7, "AI-page dash territory (10 / 1k)", fontsize=8, color=MUTED,
+    ax.axvline(3, color=MUTED, linestyle="--", linewidth=1)
+    ax.axhline(30, color=MUTED, linestyle="--", linewidth=1)
+    ax.text(3.08, 74, "triad threshold (3 / 1k)", fontsize=8, color=MUTED,
             rotation=90, va="top")
-    ax.text(35.3, 3.12, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, ha="right")
+    ax.text(5.75, 31.5, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
 
     labels = {
-        "TraffAlex": (0.5, 0.1), "elder_plinius": (0.5, 0.1), "quasa0": (0.5, -0.28),
-        "justinskycak": (0.5, 0.1), "kwindla": (-0.5, 0.12), "davepl1968": (0.5, -0.15),
-        "TheValueist": (0.5, 0.05), "TheAhmadOsman": (0.5, 0.05), "vllm_project": (0.5, 0.05),
-        "ClementDelangue": (0.5, -0.22), "analogalok": (0.3, -0.3), "onusoz": (0.5, 0.05),
-        "bryan_johnson": (0.5, 0.05),
+        "aijoey": (0.1, 1.6), "sudoingX": (0.1, 1.6), "analogalok": (0.1, 1.6),
+        "trq212": (0.1, 1.6), "VictorTaelin": (0.1, 1.6), "TheAhmadOsman": (0.08, 1.6),
+        "ClementDelangue": (-0.08, 1.6), "unclebobmartin": (0.1, 1.6),
+        "bryan_johnson": (0.1, 1.6), "TheValueist": (-0.08, 1.6), "vllm_project": (0.08, 1.6),
     }
     for r in tw:
-        x, y = r["em_dash_per_1k"], r["triads_per_1k"]
+        x, y = r["triads_per_1k"], r["labeled_bullet_pct_of_bullets"]
         ax.scatter(x, y, s=52, color="#64748b", zorder=3, edgecolors="white", linewidths=0.8)
         if r["doc"] in labels:
             dx, dy = labels[r["doc"]]
             ha = "right" if dx < 0 else "left"
             ax.text(x + dx, y + dy, "@" + r["doc"], fontsize=8, color=TEXT, ha=ha)
+    ax.text(0.06, -4.2, "31 accounts along the x axis, 10 of them at (0, 0)",
+            fontsize=8, color=MUTED, ha="left", va="top")
 
-    ax.set_xlim(-1.2, 36.5)
-    ax.set_ylim(-0.35, 5.9)
-    ax.set_xlabel("Dashes (em, double hyphen, spaced hyphen) per 1,000 words", fontsize=10)
-    ax.set_ylabel("Exactly-three lists per 1,000 words", fontsize=10)
-    ax.set_title("42 accounts' long-form tweets, no ground truth",
+    ax.set_xlim(-0.25, 5.9)
+    ax.set_ylim(-9, 86)
+    ax.set_xlabel("Exactly-three lists per 1,000 words", fontsize=10)
+    ax.set_ylabel("Labeled bullets, % of all bullets", fontsize=10)
+    ax.set_title("42 accounts' long-form tweets on the page detector's axes",
                  fontsize=13, fontweight="bold", loc="left", pad=10)
     ax.tick_params(labelsize=8.5)
 

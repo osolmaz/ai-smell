@@ -134,14 +134,18 @@ A third corpus group (`corpus/tweets/`, built by `sample_tweets.py` from
 the private xtap-store archive) holds one sample per account: every
 original long-form tweet (>280 chars), date-sorted, for the 42 accounts
 with at least 2,000 words of such text. There is no ground truth for
-these. Applying the same counters: six accounts sit past 10 dashes per
-1,000 words (AI-page territory, topped by 34.5), four trip the triad
-threshold, and none trips both, unlike the landing pages where the
-tells came bundled. Labeled bullets abstain since tweets have no
-bullets, so the page detector does not transfer to the feed whole. The
-motivating account (analogalok) sits below both lines; its long posts
-share a hook template ("Let me explain", "It's not X. It's Y.") that
-these counters do not measure.
+these. Applying the page detector unchanged, seven of the 42 accounts
+trip it: four cross the triad line (topped by 5.4 per 1,000 words) and
+three cross the labeled-bullet line (topped by a 78% share), and none
+crosses both, unlike the landing pages where every document sat far past
+both thresholds at once. The bullet share rests on smaller counts in the
+feed, since threads carry far fewer bullets than landing pages, and one
+flagged account crosses on just two labeled bullets, so the thresholds
+transfer but the confidence does not. The motivating account (analogalok)
+is one of the three past the bullet line, with 41 labeled bullets out of
+90 (46%) while its dash and triad rates sit mid-field. Its long posts
+also share a hook template ("Let me explain", "It's not X. It's Y.")
+that these counters do not measure.
 
 ## A minimal detector
 
@@ -160,10 +164,9 @@ sample of post-LLM, human-written landing pages.
 The corpus lives in `corpus/ai/` (the ten site pages, fetched 2026-07-13),
 `corpus/human/` (the eight baselines; the essays were fetched by
 `fetch_human.py` or by hand, the READMEs from raw.githubusercontent.com at
-their tags), and `corpus/tweets/` (the 42 account samples, built by
-`sample_tweets.py` from a private tweet archive). The same corpus is
-published under https://solmaz.io/ai-de-smeller/corpus/ as the companion
-to the blog post.
+their tags), `corpus/tweets/` (the 42 account samples, built by
+`sample_tweets.py` from a private tweet archive), and `corpus/self/` (the
+blog post itself, archived as measured).
 
 To reproduce the numbers, run `python3 analyze.py`, which writes
 `results.json` and prints the per-document table. `analyze_ontology.py`

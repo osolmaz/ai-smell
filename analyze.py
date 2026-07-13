@@ -123,7 +123,7 @@ def analyze(path: Path, group: str):
 
 
 results = []
-for group in ("ai", "human", "tweets"):
+for group in ("ai", "human", "tweets", "self"):
     for f in sorted((CORPUS / group).glob("*.md")):
         results.append(analyze(f, group))
 

@@ -3582,6 +3582,67 @@
         "45": 3,
         "50": 3
       }
+    },
+    {
+      "doc": "this-post",
+      "group": "self",
+      "words": 2814,
+      "sentences": 122,
+      "mean_sentence_len": 23.1,
+      "stdev_sentence_len": 13.7,
+      "cv_sentence_len": 0.59,
+      "frag_pct": 0.8,
+      "long_pct": 18.0,
+      "em_dash_per_1k": 0.0,
+      "semicolon_per_1k": 0.7,
+      "colon_per_1k": 5.7,
+      "bullet_line_pct": 8.7,
+      "labeled_bullets": 0,
+      "labeled_bullet_pct_of_bullets": 0.0,
+      "headings_per_1k": 2.5,
+      "contrast_per_1k": 3.2,
+      "not_just_per_1k": 0.0,
+      "triads_per_1k": 0.71,
+      "long_lists_per_1k": 0.0,
+      "no_anaphora": 0,
+      "first_person_per_1k": 8.9,
+      "second_person_per_1k": 5.0,
+      "ttr_280": 0.604,
+      "top_openers": [
+        [
+          "the",
+          34
+        ],
+        [
+          "it",
+          7
+        ],
+        [
+          "a",
+          5
+        ],
+        [
+          "that",
+          4
+        ],
+        [
+          "<img",
+          3
+        ]
+      ],
+      "len_hist": {
+        "0": 1,
+        "5": 16,
+        "10": 21,
+        "15": 18,
+        "20": 15,
+        "25": 20,
+        "30": 9,
+        "35": 8,
+        "40": 5,
+        "45": 4,
+        "50": 5
+      }
     }
   ],
   "ai_shared_phrases": {
