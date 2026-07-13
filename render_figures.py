@@ -7,6 +7,11 @@ Figure 2: scatter of exactly-three-list rate vs labeled-bullet share, the
 two metrics that each classify the whole corpus alone, with the detector
 thresholds drawn as dashed reference lines.
 
+Figure 4: scatter of mean Zipf word frequency vs MTLD lexical diversity
+(from results_lexical.json), the two word-choice metrics, in the same
+style as figure 2, with the tweet samples drawn faintly and the post as
+a green diamond.
+
 Figure 3: three vertically stacked scatter panels of the in-the-wild
 tweet samples (from results.json) over different metric pairs, with the
 ground-truth pages and baselines drawn faintly for reference in every
@@ -261,7 +266,60 @@ def fig3():
     plt.close(fig)
 
 
+def fig4():
+    root = Path(__file__).resolve().parent
+    lex = json.loads((root / "results_lexical.json").read_text())["docs"]
+    labels = json.loads((root / "figures" / "data.json").read_text())["docs"]
+    label_of = {d["doc"]: d["label"] for d in labels}
+    TW_COLOR = "#475569"
+    SELF_COLOR = "#16a34a"
+
+    fig, ax = plt.subplots(figsize=(8.0, 5.6))
+    fig.patch.set_facecolor(BG)
+    style_axis(ax)
+
+    from adjustText import adjust_text
+    texts = []
+    for d in lex:
+        x, y = d["zipf_mean"], d["mtld"]
+        if d["group"] == "tweets":
+            ax.scatter(x, y, s=26, color=TW_COLOR, alpha=0.35, zorder=2, linewidths=0)
+            continue
+        if d["group"] == "self":
+            ax.scatter(x, y, s=72, color=SELF_COLOR, zorder=4, marker="D",
+                       edgecolors="white", linewidths=0.8)
+            texts.append(ax.text(x, y, "this post", fontsize=8, color=SELF_COLOR,
+                                 fontweight="bold"))
+            continue
+        color = AI_COLOR if d["group"] == "ai" else HUMAN_COLOR
+        ax.scatter(x, y, s=64, color=color, zorder=3, edgecolors="white", linewidths=0.8)
+        texts.append(ax.text(x, y, label_of.get(d["doc"], d["doc"]),
+                             fontsize=8, color=TEXT))
+    adjust_text(texts, ax=ax, expand=(1.25, 1.5), force_text=(0.3, 0.6), time_lim=3,
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.4, alpha=0.6))
+
+    ax.set_xlabel("Mean Zipf word frequency (higher = commoner words)", fontsize=10)
+    ax.set_ylabel("MTLD lexical diversity", fontsize=10)
+    ax.set_title("AI pages use rarer words and rotate them more",
+                 fontsize=13, fontweight="bold", loc="left", pad=10)
+    ax.tick_params(labelsize=8.5)
+
+    handles = [
+        plt.Line2D([], [], marker="o", linestyle="", color=AI_COLOR, label="AI-flavored pages"),
+        plt.Line2D([], [], marker="o", linestyle="", color=HUMAN_COLOR, label="Human baselines (pre-LLM)"),
+        plt.Line2D([], [], marker="o", linestyle="", color=TW_COLOR, alpha=0.35,
+                   label="Tweet samples (no ground truth)"),
+        plt.Line2D([], [], marker="D", linestyle="", color=SELF_COLOR, label="This post"),
+    ]
+    ax.legend(handles=handles, loc="upper right", frameon=False, fontsize=8.5)
+    fig.tight_layout()
+    fig.savefig(OUT / "lexical.svg", facecolor=BG)
+    fig.savefig(OUT / "lexical.png", facecolor=BG, dpi=200)
+    plt.close(fig)
+
+
 fig1()
 fig2()
 fig3()
+fig4()
 print("written to", OUT)

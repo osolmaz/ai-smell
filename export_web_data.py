@@ -1,8 +1,9 @@
 """Export a compact data file for the blog post's interactive figures.
 
-Reads results.json and writes figures/data.json with only the fields the
-charts need, plus a display label per document. The blog copies this file
-to its own tree and renders it with Plotly.
+Reads results.json (plus mtld and zipf_mean from results_lexical.json)
+and writes figures/data.json with only the fields the charts need, plus
+a display label per document. The blog copies this file to its own tree
+and renders it with Chart.js.
 """
 import json
 from pathlib import Path
@@ -25,11 +26,16 @@ KEYS = ["em_dash_per_1k", "triads_per_1k", "labeled_bullet_pct_of_bullets",
         "first_person_per_1k", "frag_pct", "ttr_280", "words"]
 
 docs = json.loads((ROOT / "results.json").read_text())["docs"]
+lexical = {d["doc"]: d for d in
+           json.loads((ROOT / "results_lexical.json").read_text())["docs"]}
 out = []
 for d in docs:
     label = LABELS.get(d["doc"], "@" + d["doc"] if d["group"] == "tweets" else d["doc"])
     row = {"doc": d["doc"], "group": d["group"], "label": label}
     row.update({k: d[k] for k in KEYS})
+    lex = lexical[d["doc"]]
+    row["mtld"] = lex["mtld"]
+    row["zipf_mean"] = lex["zipf_mean"]
     out.append(row)
 
 (ROOT / "figures" / "data.json").write_text(json.dumps({"docs": out}, indent=1))

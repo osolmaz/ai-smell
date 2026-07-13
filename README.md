@@ -173,12 +173,15 @@ blog post itself, archived as measured).
 To reproduce the numbers, run `python3 analyze.py`, which writes
 `results.json` and prints the per-document table. `analyze_ontology.py`
 covers finding 7, `analyze_headings.py` covers finding 8, and
-`render_figures.py` renders the blog figures into `figures/` (it needs
-matplotlib and adjustText, for example via `uv run --with matplotlib
---with adjustText python3 render_figures.py`), and `export_web_data.py`
-writes `figures/data.json`, the compact per-document dataset behind the
-blog post's interactive Chart.js figures. All scripts resolve the corpus relative to the
-repository root.
+`analyze_lexical.py` (run via `uv run --with wordfreq python3
+analyze_lexical.py`) writes `results_lexical.json` with MTLD lexical
+diversity, word length, syllable, readability, and Zipf word-frequency
+metrics. `export_web_data.py` writes `figures/data.json`, the compact
+per-document dataset behind the blog post's interactive Chart.js
+figures, and `render_figures.py` renders the blog figures into
+`figures/` (it needs matplotlib and adjustText, for example via `uv run
+--with matplotlib --with adjustText python3 render_figures.py`). All
+scripts resolve the corpus relative to the repository root.
 
 ## License
 

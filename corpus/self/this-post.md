@@ -33,6 +33,8 @@ The chart below shows every document against every metric, with the AI pages in 
 | Fragment sentences (≤4 words) | 3.6–41.9% | 1.4–17.4% |
 | First person /1k words | 0.0–2.1 | 0.0–50.9 |
 | Type-token ratio (first 280 words) | 0.59–0.69 | 0.53–0.67 |
+| MTLD lexical diversity | 112–229 | 66–146 |
+| Mean Zipf word frequency | 4.86–5.30 | 5.28–5.99 |
 
 </details>
 
@@ -49,6 +51,17 @@ The metric is the share of a document's bullets that follow this shape. On the A
 Fragment sentences, the verbless punches of four words or fewer, sit in between. Most AI pages run high, and the worst writes two of every five sentences that way, but the groups overlap. The deliberately punchy Requests README out-fragments three of the AI pages. Fragments corroborate rather than convict.
 
 First person taught me the opposite lesson. It looked like a strong tell until the corpus got fairer. Against essays the gap is enormous, since the antirez post averages more than one first-person word per sentence and the ten AI pages together contain exactly one. But the pre-LLM READMEs behave like the AI pages here. The Requests README has no first person at all, and ripgrep and Redis barely any. Authorial voice turns out to track register rather than authorship, so it works as a confirming signal at best. Vocabulary variety weakened the same way. Generated copy rotates in a fresh synonym at every mention, which pushes its lexical diversity high, and the AI pages do cluster at the top of the range. But the Requests README, which is deliberately punchy marketing prose, scores right among them, so the metric separates registers more than it separates authors. The human tendency it gestures at is still real, though. Human writers reuse the established word for a thing and repeat phrases for emphasis. Joel opens three consecutive paragraphs with "You are throwing away", and a model would never.
+
+The vocabulary story does not end there, because the type-token ratio was the wrong instrument. We remeasured word choice with two better ones. MTLD scores lexical diversity in a way that does not depend on document length, and the wordfreq package places every word on the Zipf frequency scale, where "the" scores about 7.7 and anything under 3.0 sits outside roughly the 30,000 commonest English words.
+
+Both separate the groups where the TTR could not. All ten AI pages score above 111 on MTLD while seven of the eight human texts stay under 106, with the Requests README as the lone crossover once again. Mean word frequency does even better, and after the two structural metrics it is the nearest thing to a clean split in the study. Every AI page averages Zipf 5.30 or below and every human text 5.28 or above, a gap of 0.02 at the closest edge between the plainest-worded AI page and the ripgrep README. The reason is not exotic vocabulary. The rare words on both sides are ordinary jargon, "OAuth" and "stdout" against "Valgrind" and "malloc". What differs is the connective tissue. Nearly half the words in the human texts are the commonest ones in English, the "the" and "of" that full sentences run on, while on the AI pages that share drops below three in ten, because telegraphic noun piles need no articles. So the rarity metric measures, from a third angle, the same thing the fragments and the labeled bullets measure, which is that generated landing copy does not write whole sentences.
+
+<img class="desmeller-fallback" src="/img/ai-de-smeller/lexical.svg" alt="Scatter plot of mean Zipf word frequency against MTLD lexical diversity, with the AI pages clustered at rare words and high diversity, the human baselines at common words and low diversity, the tweet samples spread faintly between them, and this post on the human side">
+<div class="desmeller-charts" style="display:none">
+  <div id="desmeller-lexical" class="desmeller-chart"></div>
+</div>
+
+Flesch-Kincaid grade, the standard readability score, misses all of it. The AI pages come out as easier reading than the human baselines because their sentences are short, and the formula never looks at what fills them. This post sits on the human side of both word-choice axes, as the green diamond in the chart shows.
 
 ## Structural tells
 
