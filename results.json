@@ -3586,13 +3586,13 @@
     {
       "doc": "this-post",
       "group": "self",
-      "words": 2986,
-      "sentences": 127,
-      "mean_sentence_len": 23.5,
-      "stdev_sentence_len": 14.1,
+      "words": 2988,
+      "sentences": 128,
+      "mean_sentence_len": 23.4,
+      "stdev_sentence_len": 14.0,
       "cv_sentence_len": 0.6,
       "frag_pct": 0.8,
-      "long_pct": 18.9,
+      "long_pct": 18.8,
       "em_dash_per_1k": 0.0,
       "semicolon_per_1k": 1.3,
       "colon_per_1k": 6.4,
@@ -3626,18 +3626,18 @@
           4
         ],
         [
-          "<img",
-          3
+          "every",
+          4
         ]
       ],
       "len_hist": {
         "0": 1,
         "5": 15,
         "10": 22,
-        "15": 19,
-        "20": 16,
+        "15": 20,
+        "20": 17,
         "25": 19,
-        "30": 11,
+        "30": 10,
         "35": 10,
         "40": 4,
         "45": 4,

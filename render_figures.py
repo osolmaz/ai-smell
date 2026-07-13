@@ -10,9 +10,9 @@ thresholds drawn as dashed reference lines.
 Figure 3: three vertically stacked scatter panels of the in-the-wild
 tweet samples (from results.json) over different metric pairs, with the
 ground-truth pages and baselines drawn faintly for reference in every
-panel and the detector thresholds marked where they exist. The first
-panel repeats figure 2's axes and limits exactly and also carries the
-blog post itself as a green diamond.
+panel and the detector thresholds marked where they exist. Every panel
+also carries the blog post itself as a green diamond. The first panel
+repeats figure 2's axes and limits exactly.
 
 Solid light background baked in so the figures read on the blog's light
 and dark themes alike.
@@ -204,12 +204,17 @@ def fig3():
         xs = [r[xk] for r in tw]
         ys = [r[yk] for r in tw]
         ax.scatter(xs, ys, s=40, color=TW_COLOR, zorder=3, edgecolors="white", linewidths=0.7)
+        sx, sy = self_doc[xk], self_doc[yk]
+        ax.scatter(sx, sy, s=64, color=SELF_COLOR, zorder=4, marker="D",
+                   edgecolors="white", linewidths=0.8)
         import numpy as np
         np.random.seed(0)
         texts = [ax.text(r[xk], r[yk], "@" + r["doc"], fontsize=7, color=TEXT)
                  for r in tw]
-        adjust_text(texts, x=xs + [row[xi] for row in ROWS],
-                    y=ys + [row[yi] for row in ROWS], ax=ax,
+        texts.append(ax.text(sx, sy, "this post", fontsize=7.5, color=SELF_COLOR,
+                             fontweight="bold"))
+        adjust_text(texts, x=xs + [sx] + [row[xi] for row in ROWS],
+                    y=ys + [sy] + [row[yi] for row in ROWS], ax=ax,
                     expand=(1.3, 1.7), force_text=(0.4, 0.7), time_lim=5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.4, alpha=0.6))
         ax.set_title(title, fontsize=10.5, pad=8, loc="left", fontweight="bold")
@@ -217,17 +222,10 @@ def fig3():
         ax.set_ylabel(yl, fontsize=9)
         ax.tick_params(labelsize=8)
 
-    # match panel 1 to figure 2's limits so the two charts superimpose,
-    # and put the post itself on it
+    # match panel 1 to figure 2's limits so the two charts superimpose
     ax0 = axes.flat[0]
     ax0.set_xlim(-0.7, 17.2)
     ax0.set_ylim(-11, 106)
-    sx = self_doc["triads_per_1k"]
-    sy = self_doc["labeled_bullet_pct_of_bullets"]
-    ax0.scatter(sx, sy, s=64, color=SELF_COLOR, zorder=4, marker="D",
-                edgecolors="white", linewidths=0.8)
-    ax0.text(sx + 0.3, sy + 4.5, "this post", fontsize=8, color=SELF_COLOR,
-             ha="left", fontweight="bold")
     ax0.text(3.15, 55, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, rotation=90)
     ax0.text(16.9, 32.5, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
 
