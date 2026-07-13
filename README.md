@@ -172,8 +172,8 @@ To reproduce the numbers, run `python3 analyze.py`, which writes
 `results.json` and prints the per-document table. `analyze_ontology.py`
 covers finding 7, `analyze_headings.py` covers finding 8, and
 `render_figures.py` renders the blog figures into `figures/` (it needs
-matplotlib, for example via `uv run --with matplotlib python3
-render_figures.py`). All scripts resolve the corpus relative to the
+matplotlib and adjustText, for example via `uv run --with matplotlib
+--with adjustText python3 render_figures.py`). All scripts resolve the corpus relative to the
 repository root.
 
 ## License

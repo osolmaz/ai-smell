@@ -181,20 +181,15 @@ def fig3():
          "Exactly-three lists / 1k words", "Labeled bullets, % of bullets", 3, 30),
         ("Em dashes against exactly-three lists",
          "em_dash_per_1k", "triads_per_1k", 2, 3,
-         "Em dashes / 1k words", "Exactly-three lists / 1k words", None, 3),
+         "Em dashes / 1k words", "Exactly-three lists / 1k words", 4.7, 3),
         ("Em dashes against fragment sentences",
          "em_dash_per_1k", "frag_pct", 2, 6,
-         "Em dashes / 1k words", "Fragment sentences, % of sentences", None, None),
+         "Em dashes / 1k words", "Fragment sentences, % of sentences", 4.7, 17.4),
     ]
 
-    # tweet accounts labeled per panel: worth calling out at these coordinates
-    call_out = {
-        0: ["aijoey", "sudoingX", "analogalok", "trq212", "TheValueist", "TheAhmadOsman"],
-        1: ["TraffAlex", "elder_plinius", "TheValueist", "TheAhmadOsman"],
-        2: ["TraffAlex", "elder_plinius", "quasa0", "davidsenra"],
-    }
+    from adjustText import adjust_text
 
-    fig, axes = plt.subplots(3, 1, figsize=(8.0, 15.6))
+    fig, axes = plt.subplots(3, 1, figsize=(11.0, 22.5))
     fig.patch.set_facecolor(BG)
 
     for i, (ax, (title, xk, yk, xi, yi, xl, yl, xt, yt)) in enumerate(zip(axes.flat, panels)):
@@ -209,11 +204,14 @@ def fig3():
         xs = [r[xk] for r in tw]
         ys = [r[yk] for r in tw]
         ax.scatter(xs, ys, s=40, color=TW_COLOR, zorder=3, edgecolors="white", linewidths=0.7)
-        xspan = max(max(xs), max(row[xi] for row in ROWS))
-        for r in tw:
-            if r["doc"] in call_out[i]:
-                ax.text(r[xk] + xspan * 0.018, r[yk], "@" + r["doc"],
-                        fontsize=7.5, color=TEXT, ha="left", va="center")
+        import numpy as np
+        np.random.seed(0)
+        texts = [ax.text(r[xk], r[yk], "@" + r["doc"], fontsize=7, color=TEXT)
+                 for r in tw]
+        adjust_text(texts, x=xs + [row[xi] for row in ROWS],
+                    y=ys + [row[yi] for row in ROWS], ax=ax,
+                    expand=(1.3, 1.7), force_text=(0.4, 0.7), time_lim=5,
+                    arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.4, alpha=0.6))
         ax.set_title(title, fontsize=10.5, pad=8, loc="left", fontweight="bold")
         ax.set_xlabel(xl, fontsize=9)
         ax.set_ylabel(yl, fontsize=9)
@@ -233,8 +231,17 @@ def fig3():
     ax0.text(3.15, 55, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, rotation=90)
     ax0.text(16.9, 32.5, "labeled-bullet threshold (30%)", fontsize=8, color=MUTED, ha="right")
 
-    # label the triad threshold in the second panel too
+    # label the reference lines in the second and third panels: the
+    # detector's triad threshold, and the human-baseline maximum on the
+    # axes that carry no threshold (ripgrep 2016 for dashes, the
+    # Requests README for fragments)
     axes.flat[1].text(58, 3.25, "triad threshold (3 / 1k)", fontsize=8, color=MUTED, ha="right")
+    axes.flat[1].text(5.4, 15.8, "densest human baseline\n(ripgrep, 4.7 / 1k)",
+                      fontsize=8, color=MUTED, rotation=90, va="top")
+    axes.flat[2].text(5.4, 33.5, "densest human baseline\n(ripgrep, 4.7 / 1k)",
+                      fontsize=8, color=MUTED, rotation=90, va="top")
+    axes.flat[2].text(58, 19.0, "most fragmented human baseline (Requests, 17.4%)",
+                      fontsize=8, color=MUTED, ha="right")
 
     handles = [
         plt.Line2D([], [], marker="o", linestyle="", color=TW_COLOR,
