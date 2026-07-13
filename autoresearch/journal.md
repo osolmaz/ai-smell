@@ -93,3 +93,29 @@ Conclusion: the sequence order alone does not carry the tell; the level
 of the longest clause does, and the order adds margin on top of it.
 The constant-free hierarchy is 17% (level via ranks), 35% (level plus
 consecutiveness), 55% (hand-ramped level, feature.py).
+
+## Generation 7: the general family, and a correction (sweep3.py)
+
+The pair product generalizes to S_k = mean over the document of the
+product of k consecutive rank-transformed spines. S_1 is the
+Mann-Whitney/Wilcoxon rank-sum statistic of the document's spines
+against the corpus pool; S_2 is the generation-6 feature.
+
+Raw margins grow monotonically with k (S_1 +17.0, S_2 +35.0, S_3
++52.4, S_4 +65.4, S_5 +76.7, all auc 1.000 loo 18/18), but this is
+mechanical: multiplying more values in (0,1) stretches relative
+differences the way raising to a power does. Normalize the scale with
+the k-th root and the family collapses: S_2 +16.5, S_3 +15.3, S_4
++13.8, all slightly *below* S_1's +17.0. AUC and LOO, which are
+invariant to monotone rescaling, are identical across the family.
+
+Correction to generation 6: "requiring two in a row doubles the
+constant-free margin" was a scale artifact. The sequential window adds
+nothing beyond the level once the scale is fixed.
+
+Final elegant form of the constant-free tell: S_1, the Mann-Whitney
+AUC of the document's per-sentence longest unbroken runs against a
+reference corpus. One line, no parameters, classic interpretation:
+P(random run from this document > random run from the corpus). The
+hand-ramped feature.py keeps the widest raw margin (+55%) but S_1 is
+the form to report.
